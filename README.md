@@ -10,6 +10,8 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 1. [Minimum content sizing of flex items not honored](#)
 2. [Column direction flex items set to `align-items:center` overflow their container](#)
 3. [`min-height` on a flex container won't apply to its flex items](#)
+4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#)
+
 
 ## 1. Minimum content sizing of flex items not honored
 
@@ -96,6 +98,34 @@ In IE 10-11, `min-height` declarations on flex containers in the column directio
 By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have contents below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work. Demo [3.1.b](#) shows the solution to [3.1.a](#).
 
 There are cases, however, where no good workaround exists. Demo [3.2.a] shows a visual design where `min-height` is truly needed and a `height` substitution will not work. In such cases, you may need to rethink your design or resort to a [browser detection hack](http://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11).
+
+## 4. `flex` shorthand declarations with unitless `flex-basis` values are ignored
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/full/OPbQgO">3.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/full/ByQYZJ">3.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10-11</td>
+  </tr>
+</table>
+
+Prior to the release of IE 10, the [flexbox spec at the time](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flexibility) stated that a flexbox item's preferred size required a unit when using the `flex` shorthand:
+
+>  If the &lt;preferred-size&gt; is ‘0’, it must be specified with a unit (like ‘0px’) to avoid ambiguity; unitless zero will either be interpreted as as one of the flexibilities, or is a syntax error.
+
+This is no longer true in the spec, but IE 10-11 still treat it as true. If you use the declaration `flex: 1 0 0` in one of these browsers, it will be an error and the entire rule (including all the flexibility properties) will be ignored.
+
+### Workaround
+
+When using the `flex` shorthand, always include a unit in the flex-basis portion. For example: `1 0 0%`.
+
+**Important:** using a `flex` value of something like `1 0 0px` can still be a problem because many CSS minifiers will convert `0px` to `0`. To avoid this, make sure to use `0%` instead of `0px` since most minifiers won't touch percentage values for other reasons.
 
 # About
 
