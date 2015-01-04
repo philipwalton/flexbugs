@@ -3,11 +3,12 @@ Flexbugs
 
 This repo aims to be community curated list of cross-browser flexbox issues and any known workarounds for them. The goal is that if you're building a website using flexbox and something isn't working as you'd expect, you can find the solution here.
 
-As the spec continues to evolved and vendors nail down their implementations, this repo will be updated with newly discovered issues and remove old issues as their fixed or become obsolete.
+As the spec continues to evolve and vendors nail down their implementations, this repo will be updated with newly discovered issues and remove old issues as their fixed or become obsolete.
 
 # Known issues
 
 1. [Minimum content sizing of flex items not honored](#)
+2. [Column direction flex items set to `align-items:center` overflow their container](#)
 
 ## 1. Minimum content sizing of flex items not honored
 
@@ -24,9 +25,9 @@ As the spec continues to evolved and vendors nail down their implementations, th
       <a href="http://codepen.io/philipwalton/full/wBopYg">1.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
-      Chrome
-      Internet Explorer (10-11)
-      Opera
+      Chrome<br>
+      Internet Explorer (10-11)<br>
+      Opera<br>
       Safari
     </td>
   </tr>
@@ -41,6 +42,30 @@ According to the [flexbox specification](http://www.w3.org/TR/css-flexbox/#flex-
 ### Workaround
 
 The flexbox spec defines an initial `flex-shrink` value of `1` but says items should not shrink below their default minimum content size. You can get pretty much this exact same behavior by using a `flex-shrink` value of `0` instead of the default `1`. If your element is already being sized based on its children, and it hasn't set a `width`, `height`, or `flex-basis` value, then setting `flex-shrink:0` will render it the same way&mdash;but it will avoid this bug.
+
+## 2. Column direction flex items set to `align-items:center` overflow their container
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/full/xbRpMe">2.1.a</a> &mdash; <em>repro</em><br>
+      <a href="http://codepen.io/philipwalton/full/ogYpVv">2.1.b</a> &mdash; <em>workaround</em><br>
+    </td>
+    <td>
+      Internet Explorer (10-11)
+    </td>
+  </tr>
+</table>
+
+When using `align-items:center` on a flex container in the column direction, the contents of flex item, if too big on one line, will overflow their container in IE 10-11.
+
+### Workaround
+
+Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with a padding instead.
 
 # About
 
