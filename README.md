@@ -1,7 +1,7 @@
 Flexbugs
 ========
 
-This repo aims to be community curated list of cross-browser flexbox issues and known workarounds for them. The goal is that if you're building a website using flexbox and something isn't working as you'd expect, you can find the solution here.
+This repo aims to be a community curated list of cross-browser flexbox issues and known workarounds for them. The goal is that if you're building a website using flexbox and something isn't working as you'd expect, you can find the solution here.
 
 As the spec continues to evolve and vendors nail down their implementations, this repo will be updated with newly discovered issues and remove old issues as they're fixed or become obsolete.
 
