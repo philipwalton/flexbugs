@@ -9,7 +9,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 
 1. [Minimum content sizing of flex items not honored](#1-minimum-content-sizing-of-flex-items-not-honored)
 2. [Column flex items set to `align-items:center` overflow their container](#2-column-flex-items-set-to-align-itemscenter-overflow-their-container)
-3. [`min-height` on a flex container won't apply to its flex items](#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items)
+3. [`min-height` on a column flex container won't apply to its flex items](#3-min-height-on-a-column-flex-container-wont-apply-to-its-flex-items)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 
@@ -70,7 +70,7 @@ When using `align-items:center` on a flex container in the column direction, the
 
 Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
 
-### 3. `min-height` on a flex container won't apply to its flex items
+### 3. `min-height` on a column flex container won't apply to its flex items
 
 <table>
   <tr>
