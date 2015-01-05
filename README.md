@@ -13,8 +13,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
 5. [Flex items in the column direction don't always preserve intrinsic aspect ratios](#5-flex-items-in-the-column-direction-dont-always-preserve-intrinsic-aspect-ratios)
 
-
-## 1. Minimum content sizing of flex items not honored
+### 1. Minimum content sizing of flex items not honored
 
 <table>
   <tr>
@@ -43,11 +42,11 @@ According to the [flexbox specification](http://www.w3.org/TR/css-flexbox/#flex-
 
 > By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property.
 
-### Workaround
+#### Workaround
 
 The flexbox spec defines an initial `flex-shrink` value of `1` but says items should not shrink below their default minimum content size. You can get pretty much this exact same behavior by using a `flex-shrink` value of `0` instead of the default `1`. If your element is already being sized based on its children, and it hasn't set a `width`, `height`, or `flex-basis` value, then setting `flex-shrink:0` will render it the same way&mdash;but it will avoid this bug.
 
-## 2. Column direction flex items set to `align-items:center` overflow their container
+### 2. Column direction flex items set to `align-items:center` overflow their container
 
 <table>
   <tr>
@@ -67,11 +66,11 @@ The flexbox spec defines an initial `flex-shrink` value of `1` but says items sh
 
 When using `align-items:center` on a flex container in the column direction, the contents of flex item, if too big on one line, will overflow their container in IE 10-11.
 
-### Workaround
+#### Workaround
 
 Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with a padding instead.
 
-## 3. `min-height` on a flex container won't apply to its flex items
+### 3. `min-height` on a flex container won't apply to its flex items
 
 <table>
   <tr>
@@ -94,13 +93,13 @@ In order for flex items to size and position themselves, they need to know how b
 
 In IE 10-11, `min-height` declarations on flex containers in the column direction work to size the containers themselves, but their flex item children do not seem to know this information. They act as if no height has been set.
 
-### Workaround
+#### Workaround
 
 By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have contents below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work. Demo [3.1.b](http://codepen.io/philipwalton/full/KwNvLo) shows the solution to [3.1.a](http://codepen.io/philipwalton/full/RNoZJP).
 
 There are cases, however, where no good workaround exists. Demo [3.2.a] shows a visual design where `min-height` is truly needed and a `height` substitution will not work. In such cases, you may need to rethink your design or resort to a [browser detection hack](http://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11).
 
-## 4. `flex` shorthand declarations with unitless `flex-basis` values are ignored
+### 4. `flex` shorthand declarations with unitless `flex-basis` values are ignored
 
 <table>
   <tr>
@@ -122,13 +121,13 @@ Prior to the release of IE 10, the [flexbox spec at the time](http://www.w3.org/
 
 This is no longer true in the spec, but IE 10-11 still treat it as true. If you use the declaration `flex: 1 0 0` in one of these browsers, it will be an error and the entire rule (including all the flexibility properties) will be ignored.
 
-### Workaround
+#### Workaround
 
 When using the `flex` shorthand, always include a unit in the flex-basis portion. For example: `1 0 0%`.
 
 **Important:** using a `flex` value of something like `1 0 0px` can still be a problem because many CSS minifiers will convert `0px` to `0`. To avoid this, make sure to use `0%` instead of `0px` since most minifiers won't touch percentage values for other reasons.
 
-## 5. Flex items in the column direction don't always preserve intrinsic aspect ratios
+### 5. Flex items in the column direction don't always preserve intrinsic aspect ratios
 
 <table>
   <tr>
@@ -152,14 +151,14 @@ Demo [5.1.a](http://codepen.io/philipwalton/full/LEbQON) contains an image whose
 
 The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has resolved this ambiguity in favor of using sizes that will preserve an element's intrinsic aspect ratio.
 
-### Workaround
+#### Workaround
 
 This problem can easily be avoided by adding a container element to house the element with the intrinsic aspect ratio. Since doing this causes the element with the intrinsic aspect ratio to no longer be a flex item, it will be sized as normal.
 
-# Acknowledgements
+## Acknowledgements
 
-Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Issues](#http://philipwalton.com/articles/normalizing-cross-browser-flexbox-issues/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
+Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Issues](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-issues/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
 
-# Contributing
+## Contributing
 
 If you've discovered a flexbox bug or would like to submit a workaround, please open an issue or submit a pull request. Make sure to submit relevant test cases and screenshots and indicate which browsers are affected by the issue.
