@@ -157,7 +157,7 @@ You can avoid this problem by adding a container element to house the element wi
 
 ## Acknowledgements
 
-Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Issues](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-issues/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
+Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Bugs](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
 
 ## Contributing
 
