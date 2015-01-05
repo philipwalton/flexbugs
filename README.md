@@ -19,6 +19,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
   <tr>
     <th align="left">Demos</th>
     <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
   </tr>
   <tr valign="top">
     <td>
@@ -31,6 +32,10 @@ As the spec continues to evolve and vendors nail down their implementations, thi
       Chrome<br>
       Opera<br>
       Safari
+    </td>
+    <td>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898</a><br>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1043520">Firefox #1043520</a>
     </td>
   </tr>
 </table>
@@ -75,7 +80,7 @@ Most of the time, this can be fixed by simply setting `max-width:100%` on the fl
   <tr>
     <th align="left">Demos</th>
     <th align="left">Browsers affected</th>
-    <th align="left">Bug Reports</th>
+    <th align="left">Tracking bugs</th>
   </tr>
   <tr valign="top">
     <td>
@@ -84,7 +89,7 @@ Most of the time, this can be fixed by simply setting `max-width:100%` on the fl
       <a href="http://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &mdash; <em>bug</em><br>
     </td>
     <td>Internet Explorer (10-11)</td>
-    <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">connect.microsoft.com</a></td>
+    <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625</a></td>
   </tr>
 </table>
 
