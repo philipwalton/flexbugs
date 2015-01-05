@@ -11,6 +11,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 2. [Column direction flex items set to `align-items:center` overflow their container](#)
 3. [`min-height` on a flex container won't apply to its flex items](#)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#)
+5. [Flex items in the column direction don't always preserve intrinsic aspect ratios](#)
 
 
 ## 1. Minimum content sizing of flex items not honored
@@ -126,6 +127,34 @@ This is no longer true in the spec, but IE 10-11 still treat it as true. If you 
 When using the `flex` shorthand, always include a unit in the flex-basis portion. For example: `1 0 0%`.
 
 **Important:** using a `flex` value of something like `1 0 0px` can still be a problem because many CSS minifiers will convert `0px` to `0`. To avoid this, make sure to use `0%` instead of `0px` since most minifiers won't touch percentage values for other reasons.
+
+## 5. Flex items in the column direction don't always preserve intrinsic aspect ratios
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/full/LEbQON">5.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/full/wBoyry">5.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10-11</td>
+  </tr>
+</table>
+
+The [March 2014 spec](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#min-size-auto) has the following to say about how size determinations are made for flex items:
+
+> On a flex item whose overflow is not visible, this [auto] keyword specifies as the minimum size the smaller of: (a) the min-content size, or (b) the computed width/height, if that value is definite.
+
+Demo [5.1.a](http://codepen.io/philipwalton/full/LEbQON) contains an image whose height is 200 pixel and whose width is 500 pixel. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
+
+The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has resolved this ambiguity in favor of using sizes that will preserve an element's intrinsic aspect ratio.
+
+### Workaround
+
+This problem can easily be avoided by adding a container element to house the element with the intrinsic aspect ratio. Since doing this causes the element with the intrinsic aspect ratio to no longer be a flex item, it will be sized as normal.
 
 # About
 
