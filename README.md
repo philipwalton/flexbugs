@@ -5,13 +5,13 @@ This repo aims to be community curated list of cross-browser flexbox issues and 
 
 As the spec continues to evolve and vendors nail down their implementations, this repo will be updated with newly discovered issues and remove old issues as their fixed or become obsolete.
 
-## Table of contents
+## The bugs and their workarounds
 
 1. [Minimum content sizing of flex items not honored](#1-minimum-content-sizing-of-flex-items-not-honored)
-2. [Column direction flex items set to `align-items:center` overflow their container](#2-column-direction-flex-items-set-to-align-itemscenter-overflow-their-container)
+2. [Column flex items set to `align-items:center` overflow their container](#2-column-flex-items-set-to-align-itemscenter-overflow-their-container)
 3. [`min-height` on a flex container won't apply to its flex items](#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
-5. [Flex items in the column direction don't always preserve intrinsic aspect ratios](#5-flex-items-in-the-column-direction-dont-always-preserve-intrinsic-aspect-ratios)
+5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -36,9 +36,9 @@ As the spec continues to evolve and vendors nail down their implementations, thi
   </tr>
 </table>
 
-When flex items are too big to fit inside their container, those items are instructed (by the flex layout algorithm) to shrink, proportionally, according to their `flex-shink` property. But contrary to what most browsers allow, they're *not* supposed to shrink indefinitely. They must always be at least as big as their minimum height or width properties declare, and if no minimum height or width properties are set, their minimum size should be the default minimum size of their content.
+When flex items are too big to fit inside their container, those items are instructed (by the flex layout algorithm) to shrink, proportionally, according to their `flex-shrink` property. But contrary to what most browsers allow, they're *not* supposed to shrink indefinitely. They must always be at least as big as their minimum height or width properties declare, and if no minimum height or width properties are set, their minimum size should be the default minimum size of their content.
 
-According to the [flexbox specification](http://www.w3.org/TR/css-flexbox/#flex-common):
+According to the [current flexbox specification](http://www.w3.org/TR/css-flexbox/#flex-common):
 
 > By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property.
 
@@ -46,7 +46,7 @@ According to the [flexbox specification](http://www.w3.org/TR/css-flexbox/#flex-
 
 The flexbox spec defines an initial `flex-shrink` value of `1` but says items should not shrink below their default minimum content size. You can get pretty much this exact same behavior by using a `flex-shrink` value of `0` instead of the default `1`. If your element is already being sized based on its children, and it hasn't set a `width`, `height`, or `flex-basis` value, then setting `flex-shrink:0` will render it the same way&mdash;but it will avoid this bug.
 
-### 2. Column direction flex items set to `align-items:center` overflow their container
+### 2. Column flex items set to `align-items:center` overflow their container
 
 <table>
   <tr>
@@ -64,11 +64,11 @@ The flexbox spec defines an initial `flex-shrink` value of `1` but says items sh
   </tr>
 </table>
 
-When using `align-items:center` on a flex container in the column direction, the contents of flex item, if too big on one line, will overflow their container in IE 10-11.
+When using `align-items:center` on a flex container in the column direction, the contents of flex item, if too big, will overflow their container in IE 10-11.
 
 #### Workaround
 
-Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with a padding instead.
+Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
 
 ### 3. `min-height` on a flex container won't apply to its flex items
 
@@ -91,13 +91,13 @@ Most of the time, this can be fixed by simply setting `max-width:100%` on the fl
 
 In order for flex items to size and position themselves, they need to know how big their containers are. For example, if a flex item is supposed to be vertically centered, it needs to know how tall its parent is. The same is true when flex items are told to grow to fill the remaining empty space.
 
-In IE 10-11, `min-height` declarations on flex containers in the column direction work to size the containers themselves, but their flex item children do not seem to know this information. They act as if no height has been set.
+In IE 10-11, `min-height` declarations on flex containers in the column direction work to size the containers themselves, but their flex item children do not seem to know the size of their parents. They act as if no height has been set at all.
 
 #### Workaround
 
-By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have contents below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work. Demo [3.1.b](http://codepen.io/philipwalton/full/KwNvLo) shows the solution to [3.1.a](http://codepen.io/philipwalton/full/RNoZJP).
+By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have any content below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work as shown in demo [3.1.b](http://codepen.io/philipwalton/full/KwNvLo).
 
-There are cases, however, where no good workaround exists. Demo [3.2.a] shows a visual design where `min-height` is truly needed and a `height` substitution will not work. In such cases, you may need to rethink your design or resort to a [browser detection hack](http://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11).
+There are cases, however, where no good workaround exists. Demo [3.2.a](http://codepen.io/philipwalton/full/VYmbmj) shows a visual design where `min-height` is truly needed and a `height` substitution will not work. In such cases, you may need to rethink your design or resort to a [browser detection hack](http://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11).
 
 ### 4. `flex` shorthand declarations with unitless `flex-basis` values are ignored
 
@@ -123,11 +123,11 @@ This is no longer true in the spec, but IE 10-11 still treat it as true. If you 
 
 #### Workaround
 
-When using the `flex` shorthand, always include a unit in the flex-basis portion. For example: `1 0 0%`.
+When using the `flex` shorthand, always include a unit in the `flex-basis` portion. For example: `1 0 0%`.
 
 **Important:** using a `flex` value of something like `1 0 0px` can still be a problem because many CSS minifiers will convert `0px` to `0`. To avoid this, make sure to use `0%` instead of `0px` since most minifiers won't touch percentage values for other reasons.
 
-### 5. Flex items in the column direction don't always preserve intrinsic aspect ratios
+### 5. Column flex items don't always preserve intrinsic aspect ratios
 
 <table>
   <tr>
@@ -147,13 +147,13 @@ The [March 2014 spec](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#min-s
 
 > On a flex item whose overflow is not visible, this [auto] keyword specifies as the minimum size the smaller of: (a) the min-content size, or (b) the computed width/height, if that value is definite.
 
-Demo [5.1.a](http://codepen.io/philipwalton/full/LEbQON) contains an image whose height is 200 pixel and whose width is 500 pixel. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
+Demo [5.1.a](http://codepen.io/philipwalton/full/LEbQON) contains an image whose height is 200 pixels and whose width is 500 pixels. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
 
 The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has resolved this ambiguity in favor of using sizes that will preserve an element's intrinsic aspect ratio.
 
 #### Workaround
 
-This problem can easily be avoided by adding a container element to house the element with the intrinsic aspect ratio. Since doing this causes the element with the intrinsic aspect ratio to no longer be a flex item, it will be sized as normal.
+You can avoid this problem by adding a container element to house the element with the intrinsic aspect ratio. Since doing this causes the element with the intrinsic aspect ratio to no longer be a flex item, it will be sized normally.
 
 ## Acknowledgements
 
@@ -161,4 +161,4 @@ Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Fl
 
 ## Contributing
 
-If you've discovered a flexbox bug or would like to submit a workaround, please open an issue or submit a pull request. Make sure to submit relevant test cases and screenshots and indicate which browsers are affected by the issue.
+If you've discovered a flexbox bug or would like to submit a workaround, please open an issue or submit a pull request. Make sure to submit relevant test cases or screenshots and indicate which browsers are affected.
