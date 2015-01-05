@@ -5,13 +5,13 @@ This repo aims to be community curated list of cross-browser flexbox issues and 
 
 As the spec continues to evolve and vendors nail down their implementations, this repo will be updated with newly discovered issues and remove old issues as their fixed or become obsolete.
 
-# Known issues
+## Table of contents
 
-1. [Minimum content sizing of flex items not honored](#)
-2. [Column direction flex items set to `align-items:center` overflow their container](#)
-3. [`min-height` on a flex container won't apply to its flex items](#)
-4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#)
-5. [Flex items in the column direction don't always preserve intrinsic aspect ratios](#)
+1. [Minimum content sizing of flex items not honored](#1-minimum-content-sizing-of-flex-items-not-honored)
+2. [Column direction flex items set to `align-items:center` overflow their container](#2-column-direction-flex-items-set-to-align-itemscenter-overflow-their-container)
+3. [`min-height` on a flex container won't apply to its flex items](#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items)
+4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
+5. [Flex items in the column direction don't always preserve intrinsic aspect ratios](#5-flex-items-in-the-column-direction-dont-always-preserve-intrinsic-aspect-ratios)
 
 
 ## 1. Minimum content sizing of flex items not honored
@@ -96,7 +96,7 @@ In IE 10-11, `min-height` declarations on flex containers in the column directio
 
 ### Workaround
 
-By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have contents below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work. Demo [3.1.b](#) shows the solution to [3.1.a](#).
+By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have contents below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work. Demo [3.1.b](http://codepen.io/philipwalton/full/KwNvLo) shows the solution to [3.1.a](http://codepen.io/philipwalton/full/RNoZJP).
 
 There are cases, however, where no good workaround exists. Demo [3.2.a] shows a visual design where `min-height` is truly needed and a `height` substitution will not work. In such cases, you may need to rethink your design or resort to a [browser detection hack](http://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11).
 
@@ -156,9 +156,9 @@ The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has r
 
 This problem can easily be avoided by adding a container element to house the element with the intrinsic aspect ratio. Since doing this causes the element with the intrinsic aspect ratio to no longer be a flex item, it will be sized as normal.
 
-# About
+# Acknowledgements
 
-Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Issues](#). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
+Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Issues](#http://philipwalton.com/articles/normalizing-cross-browser-flexbox-issues/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
 
 # Contributing
 
