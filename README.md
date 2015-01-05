@@ -29,7 +29,6 @@ As the spec continues to evolve and vendors nail down their implementations, thi
     </td>
     <td>
       Chrome<br>
-      Internet Explorer (10-11)<br>
       Opera<br>
       Safari
     </td>
