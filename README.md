@@ -84,7 +84,7 @@ Most of the time, this can be fixed by simply setting `max-width:100%` on the fl
       <a href="http://codepen.io/philipwalton/full/KwNvLo">3.1.b</a> &mdash; <em>workaround</em><br>
       <a href="http://codepen.io/philipwalton/full/VYmbmj">3.2.a</a> &mdash; <em>bug</em><br>
     </td>
-    <td>Internet Explorer 10-11</td>
+    <td>Internet Explorer (10-11)</td>
     <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">connect.microsoft.com</a></td>
   </tr>
 </table>
@@ -111,7 +111,7 @@ There are cases, however, where no good workaround exists. Demo [3.2.a](http://c
       <a href="http://codepen.io/philipwalton/full/OPbQgO">3.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/full/ByQYZJ">3.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10-11</td>
+    <td>Internet Explorer (10-11)</td>
   </tr>
 </table>
 
@@ -139,7 +139,7 @@ When using the `flex` shorthand, always include a unit in the `flex-basis` porti
       <a href="http://codepen.io/philipwalton/full/LEbQON">5.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/full/wBoyry">5.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10-11</td>
+    <td>Internet Explorer (10-11)</td>
   </tr>
 </table>
 
