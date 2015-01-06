@@ -12,6 +12,8 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 3. [`min-height` on a column flex container won't apply to its flex items](#3-min-height-on-a-column-flex-container-wont-apply-to-its-flex-items)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
+6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
+
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -158,6 +160,28 @@ The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has r
 #### Workaround
 
 You can avoid this problem by adding a container element to house the element with the intrinsic aspect ratio. Since doing this causes the element with the intrinsic aspect ratio to no longer be a flex item, it will be sized normally.
+
+### 6. The default `flex` value has changed
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer (10)</td>
+  </tr>
+</table>
+
+When IE 10 was being developed, the [March 2012 spec](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flexibility) said the initial value for the `flex` property was `none`, which translates to `0 0 auto`. The [most recent spec](http://www.w3.org/TR/css3-flexbox/#flex-property) sets the initial `flex` value to the initial values of the individual flexibility properties, which corresponds to `initial` or `0 1 auto`. Notice that this means IE 10 uses a different initial `flex-shrink` value (technically it was called `neg-flex` in the spec at the time) than every other browser. Other browsers (including IE 11) use an initial value of `1` rather than `0`.
+
+#### Workaround
+
+If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` or `flex` value on all of your flex items. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error.
 
 ## Acknowledgements
 
