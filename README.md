@@ -177,7 +177,7 @@ You can avoid this problem by adding a container element to house the element wi
   </tr>
 </table>
 
-When IE 10 was being developed, the [March 2012 spec](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flexibility) said the initial value for the `flex` property was the keyword `none`, which translates to `0 0 auto`. The [most recent spec](http://www.w3.org/TR/css3-flexbox/#flex-property) sets the initial `flex` value to the initial value of the individual flexibility properties, which corresponds to `0 1 auto`. Notice that this means IE 10 uses a different default `flex-shrink` value (technically it was called `neg-flex` in the spec at the time) than every other browser. Other browsers (including IE 11) use a default value of `1` rather than `0`.
+When IE 10 was being developed, the [March 2012 spec](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flexibility) said the initial value for the `flex` property was `none`, which translates to `0 0 auto`. The [most recent spec](http://www.w3.org/TR/css3-flexbox/#flex-property) sets the initial `flex` value to the initial values of the individual flexibility properties, which corresponds to `initial` or `0 1 auto`. Notice that this means IE 10 uses a different initial `flex-shrink` value (technically it was called `neg-flex` in the spec at the time) than every other browser. Other browsers (including IE 11) use an initial value of `1` rather than `0`.
 
 #### Workaround
 
