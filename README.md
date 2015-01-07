@@ -65,7 +65,7 @@ The flexbox spec defines an initial `flex-shrink` value of `1` but says items sh
       <a href="http://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &mdash; <em>workaround</em><br>
     </td>
     <td>
-      Internet Explorer (10-11)
+      Internet Explorer (10-11; fixed in 12)
     </td>
   </tr>
 </table>
@@ -90,7 +90,7 @@ Most of the time, this can be fixed by simply setting `max-width:100%` on the fl
       <a href="http://codepen.io/philipwalton/pen/KwNvLo">3.1.b</a> &mdash; <em>workaround</em><br>
       <a href="http://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &mdash; <em>bug</em><br>
     </td>
-    <td>Internet Explorer (10-11)</td>
+    <td>Internet Explorer (10-11; fixed in 12)</td>
     <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625</a></td>
   </tr>
 </table>
@@ -117,7 +117,7 @@ There are cases, however, where no good workaround exists. Demo [3.2.a](http://c
       <a href="http://codepen.io/philipwalton/pen/OPbQgO">3.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/pen/ByQYZJ">3.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer (10-11)</td>
+    <td>Internet Explorer (10-11; fixed in 12)</td>
   </tr>
 </table>
 
@@ -145,7 +145,7 @@ When using the `flex` shorthand, always include a unit in the `flex-basis` porti
       <a href="http://codepen.io/philipwalton/pen/LEbQON">5.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/pen/wBoyry">5.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer (10-11)</td>
+    <td>Internet Explorer (10-11; fixed in 12)</td>
   </tr>
 </table>
 
