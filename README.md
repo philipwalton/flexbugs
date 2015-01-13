@@ -13,7 +13,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
-7. [`flex-basis` doesn't account for `box-sizing:border-box`](#user-content-7-flex-basis-doesnt-account-for-box-sizingborder-box)
+7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 
 ### 1. Minimum content sizing of flex items not honored
 
