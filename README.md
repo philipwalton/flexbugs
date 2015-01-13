@@ -14,6 +14,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
+8. [`flex` shorthand doesn't support `calc()`](#8-flex-shorthand-doesnt-support-calc)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -210,6 +211,28 @@ There are two ways to work around this bug. The first requires no additional mar
 
 1. Instead of setting an explicit `flex-basis` value, use `auto`, and then set an explicit width or height. Demo [7.1.b](http://codepen.io/philipwalton/pen/XJMWem) shows this.
 2. Use a wrapper element that contains no border or padding so it works with the content box model. Demo [7.1.c](http://codepen.io/philipwalton/pen/ZYLdqb) show this.
+
+### 8. `flex` shorthand doesn't support `calc()`
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/pen/ogBrye">8.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/bNgPKz">8.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10-11 (fixed in 12+)</td>
+  </tr>
+</table>
+
+Internet Explorer 10-11 ignore `flex` shorthand declarations that use the `calc()` function in their `flex-basis` portion. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) show how `flex:0 0 calc(100%/3)` breaks in IE.
+
+#### Workaround
+
+This bug only affects the `flex` shorthand, so if you need to use `calc()` make sure to specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
 
 ## Acknowledgements
 
