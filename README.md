@@ -15,7 +15,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex` shorthand doesn't support `calc()`](#8-flex-shorthand-doesnt-support-calc)
-9. [Maxium content sizing of flex children not honored](#9-maximum-content-sizing-of-flex-children-not-honored)
+9. [Maximum content sizing of flex children not honored](#9-maximum-content-sizing-of-flex-children-not-honored)
 
 ### 1. Minimum content sizing of flex items not honored
 
