@@ -246,16 +246,17 @@ This bug only affects the `flex` shorthand, so if you need to use `calc()` make 
     <td>
       <a href="http://codepen.io/mdjasper/pen/bNqYqj">9.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://jsfiddle.net/ntkawu63/">9.1.b</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/mdjasper/pen/GgWyWz">9.1.c</a> &mdash; <em>workaround</em><br>
     </td>
     <td>Firefox 34+</td>
   </tr>
 </table>
 
-In Firefox 34+ children of flex items ignore the max-width property. This causes items larger then their container to "stretch" their flex containers, which have a proportionate size set using the `flex: n;` property. For example, images within a `flex: n;` container which set a `max-width: 100%;` (fluid images) do not respect thier container size and do not behave fluidly.
+In Firefox 34+ children of [flex items ignore the max-width property](https://bugzilla.mozilla.org/show_bug.cgi?id=1098165). This causes items larger then their container to "stretch" their flex containers, which have a proportionate size set using the `flex: n;` property. For example, images within a `flex: n;` container which set a `max-width: 100%;` (fluid images) do not respect thier container size and do not behave fluidly.
 
 #### Workaround
 
-There is no known workaround at this time.
+This bug can be mitigated by setting `min-width: 0;` on the flex item. This causes the item to reset its intrisic width, and give the child something to calculate it's width against.
 
 
 ## Acknowledgements
