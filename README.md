@@ -15,6 +15,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex` shorthand doesn't support `calc()`](#8-flex-shorthand-doesnt-support-calc)
+9. [Maximum content sizing of flex children not honored](#9-maximum-content-sizing-of-flex-children-not-honored)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -233,6 +234,30 @@ Internet Explorer 10-11 ignore `flex` shorthand declarations that use the `calc(
 #### Workaround
 
 This bug only affects the `flex` shorthand, so if you need to use `calc()` make sure to specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
+
+### 9. Maximum content sizing of flex children not honored
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/mdjasper/pen/bNqYqj">9.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://jsfiddle.net/ntkawu63/">9.1.b</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/mdjasper/pen/GgWyWz">9.1.c</a> &mdash; <em>workaround</em><br>
+    </td>
+    <td>Firefox 34+</td>
+  </tr>
+</table>
+
+In Firefox 34+ children of [flex items ignore the max-width property](https://bugzilla.mozilla.org/show_bug.cgi?id=1098165). This causes items larger then their container to "stretch" their flex containers, which have a proportionate size set using the `flex: n;` property. For example, images within a `flex: n;` container which set a `max-width: 100%;` (fluid images) do not respect thier container size and do not behave fluidly.
+
+#### Workaround
+
+This bug can be mitigated by setting `min-width: 0;` on the flex item. This causes the item to reset its intrisic width, and give the child something to calculate it's width against.
+
 
 ## Acknowledgements
 
