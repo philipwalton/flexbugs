@@ -15,6 +15,8 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex` shorthand doesn't support `calc()`](#8-flex-shorthand-doesnt-support-calc)
+9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
+
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -233,6 +235,34 @@ Internet Explorer 10-11 ignore `flex` shorthand declarations that use the `calc(
 #### Workaround
 
 This bug only affects the `flex` shorthand, so if you need to use `calc()` make sure to specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
+
+### 9. `<button>` elements can't be flex containers
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>
+      Firefox
+    </td>
+    <td>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869</a>
+    </td>
+  </tr>
+</table>
+
+Unlike `<input>` elements of type "button" or "submit", the HTML5 `<button>` element can contain child nodes. This allows you to put things other than text (e.g. icons) inside of `<button>` elements without having to resort to using semantically incorrect tags like `<div>` or `<a>`. Firefox, however, does not allow the `<button>` element to be a flex container.
+
+#### Workaround
+
+The simple solution to this problem is to use a wrapper element inside of the buton and apply `display:flex` to it. The `<button>` can then be styled as normal.
 
 ## Acknowledgements
 
