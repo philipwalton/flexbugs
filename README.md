@@ -14,7 +14,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
-8. [`flex` shorthand doesn't support `calc()`](#8-flex-shorthand-doesnt-support-calc)
+8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
 
 
@@ -205,7 +205,7 @@ If you have to support IE 10, the best solution is to *always* set an explicit `
 
 An explicit `flex-basis` value (i.e., any value other than `auto`) is supposed to act just like `width` or `height`. It determines the initial size of a flex item and then the other flexibility properties allow it to grow or shrink accordingly.
 
-Internet Explorer 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing:border-box`. Demo [7.1.a](http://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
+IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing:border-box`. Demo [7.1.a](http://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
 
 #### Workaround
 
@@ -214,7 +214,7 @@ There are two ways to work around this bug. The first requires no additional mar
 1. Instead of setting an explicit `flex-basis` value, use `auto`, and then set an explicit width or height. Demo [7.1.b](http://codepen.io/philipwalton/pen/XJMWem) shows this.
 2. Use a wrapper element that contains no border or padding so it works with the content box model. Demo [7.1.c](http://codepen.io/philipwalton/pen/ZYLdqb) show this.
 
-### 8. `flex` shorthand doesn't support `calc()`
+### 8. `flex-basis` doesn't support `calc()`
 
 <table>
   <tr>
@@ -228,13 +228,24 @@ There are two ways to work around this bug. The first requires no additional mar
     </td>
     <td>Internet Explorer 10-11 (fixed in 12+)</td>
   </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/pen/VYJgJo">8.2.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/pvXGmW">8.2.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10 (fixed in 11+)</td>
+  </tr>
 </table>
 
-Internet Explorer 10-11 ignore `flex` shorthand declarations that use the `calc()` function in their `flex-basis` portion. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) show how `flex:0 0 calc(100%/3)` breaks in IE.
+IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) shows `flex:0 0 calc(100%/3)` not working in IE.
+
+In IE 10, `calc()` functions to not even work in non-shorthand `flex-basis` declarations (though this does work in IE 11). Demo [8.2.a](http://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
 
 #### Workaround
 
-This bug only affects the `flex` shorthand, so if you need to use `calc()` make sure to specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
+Since this bug only affects the `flex` shorthand declaration in IE 11, an easy workaround (if you only need to support IE 11+) is to always specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
+
+If you need to support IE 10 as well, then you'll need to fall back to setting `width` or `height` (depending on the container's `flex-direction` property). You can do this by setting a `flex-basis` value of `auto`, which will instruct the browser to use the element's [main size](http://dev.w3.org/csswg/css-flexbox/#box-model) property (i.e., its `width` or `height`). Demo [8.2.b](http://codepen.io/philipwalton/pen/pvXGmW) offers an example of this.
 
 ### 9. `<button>` elements can't be flex containers
 
