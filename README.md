@@ -239,7 +239,7 @@ There are two ways to work around this bug. The first requires no additional mar
 
 IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) shows `flex:0 0 calc(100%/3)` not working in IE.
 
-In IE 10, `calc()` functions to not even work in non-shorthand `flex-basis` declarations (though this does work in IE 11). Demo [8.2.a](http://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
+In IE 10, `calc()` functions don't even work in longhand `flex-basis` declarations (though this does work in IE 11+). Demo [8.2.a](http://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
 
 #### Workaround
 
