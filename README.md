@@ -17,6 +17,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
+11. [vertical `padding` and `margin` are not applied if set in percents on flex elements](#11-vertical-padding-and-margin-are-not-applied-if-set-in-percents-on-flex-elements)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -275,6 +276,7 @@ Unlike `<input>` elements of type "button" or "submit", the HTML5 `<button>` ele
 
 The simple solution to this problem is to use a wrapper element inside of the buton and apply `display:flex` to it. The `<button>` can then be styled as normal.
 
+
 ### 10. `align-items: baseline` doesn't work with nested flex containers
 
 <table>
@@ -299,9 +301,33 @@ The simple solution to this problem is to use a wrapper element inside of the bu
 
 In Firefox, nested flex containers don't contribute to the baseline that other flex items should align themselves to. Demo [10.1.a](http://codepen.io/philipwalton/pen/vOOejZ) shows the line on the left incorrectly aligning itself to the second line of text on the right. It should be aligned to the first line of text, which is the inner flex container.
 
+
 #### Workaround
 
 This bug only affects nested containers set to `display: flex`. If you set the nested container to `display: inline-flex` it works as expected. Note that when using `inline-flex` you will probably also need to set the width to `100%`.
+
+### 11. vertical `padding` and `margin` are not applied if set in percents on flex elements
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/anon/pen/WvNqoQ">11.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/anon/pen/yNLdVV?editors=110">11.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Firefox</td>
+  </tr>
+</table>
+
+Vertical padding & margin when set in percent units is not interpreted by Firefox on flex elements.
+
+#### Workaround
+
+The solution to this issue is to wrap the element with a relative padding and apply the flex properties to it.
+
 
 ## Acknowledgements
 
