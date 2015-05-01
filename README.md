@@ -16,7 +16,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
-10. [`align-items: baseline` doesn't work with nested flex containers](#align-items-baseline-doesnt-work-with-nested-flex-containers)
+10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 
 ### 1. Minimum content sizing of flex items not honored
 
