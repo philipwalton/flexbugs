@@ -16,7 +16,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
-
+10. [`align-items: baseline` doesn't work with nested flex containers](#align-items-baseline-doesnt-work-with-nested-flex-containers)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -274,6 +274,34 @@ Unlike `<input>` elements of type "button" or "submit", the HTML5 `<button>` ele
 #### Workaround
 
 The simple solution to this problem is to use a wrapper element inside of the buton and apply `display:flex` to it. The `<button>` can then be styled as normal.
+
+### 10. `align-items: baseline` doesn't work with nested flex containers
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/pen/vOOejZ">10.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/MwwEVd">10.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>
+      Firefox
+    </td>
+    <td>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1146442">Firefox #1146442</a>
+    </td>
+  </tr>
+</table>
+
+In Firefox, nested flex containers don't contribute to the baseline that other flex items should align themselves to. Demo [10.1.a](http://codepen.io/philipwalton/pen/vOOejZ) shows the line on the left incorrectly aligning itself to the second line of text on the right. It should be aligned to the first line of text, which is the inner flex container.
+
+#### Workaround
+
+This bug only affects nested containers set to `display: flex`. If you set the nested container to `display: inline-flex` it works as expected. Note that when using `inline-flex` you will probably also need to set the width to `100%`.
 
 ## Acknowledgements
 
