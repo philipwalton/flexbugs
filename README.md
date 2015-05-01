@@ -17,7 +17,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
-11. [vertical `padding` and `margin` are not applied if set in percents on flex elements](#11-vertical-padding-and-margin-are-not-applied-if-set-in-percents-on-flex-elements)
+11. [Vertical, percentage-based padding and margins don't work on flex items](#11-vertical-percentage-based-padding-and-margins-dont-work-on-flex-items)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -306,7 +306,7 @@ In Firefox, nested flex containers don't contribute to the baseline that other f
 
 This bug only affects nested containers set to `display: flex`. If you set the nested container to `display: inline-flex` it works as expected. Note that when using `inline-flex` you will probably also need to set the width to `100%`.
 
-### 11. vertical `padding` and `margin` are not applied if set in percents on flex elements
+### 11. Vertical, percentage-based padding and margins don't work on flex items.
 
 <table>
   <tr>
@@ -315,19 +315,18 @@ This bug only affects nested containers set to `display: flex`. If you set the n
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/anon/pen/WvNqoQ">11.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/anon/pen/yNLdVV?editors=110">11.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/anon/pen/EjjEmW">11.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/anon/pen/vOORJa">11.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Firefox</td>
   </tr>
 </table>
 
-Vertical padding & margin when set in percent units is not interpreted by Firefox on flex elements.
+Padding and margins, when set in percentages, are always relative to the parent element's width (not height). This is even true for top and bottom padding and margins. In Firefox, when applying a percentage-based padding or margin to the top or bottom of a flex item, the value computes to zero. Demo [11.1.a](http://codepen.io/philipwalton/pen/EjjEmW) shows an example of this.
 
 #### Workaround
 
-The solution to this issue is to wrap the element with a relative padding and apply the flex properties to it.
-
+This bug only affects flex items, so the solution is to apply any vertical padding or margins to an inner wrapper element. Demo [11.1.b](http://codepen.io/philipwalton/pen/vOORJa) shows an example of this.
 
 ## Acknowledgements
 
