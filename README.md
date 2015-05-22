@@ -274,7 +274,7 @@ Unlike `<input>` elements of type "button" or "submit", the HTML5 `<button>` ele
 
 #### Workaround
 
-The simple solution to this problem is to use a wrapper element inside of the buton and apply `display:flex` to it. The `<button>` can then be styled as normal.
+The simple solution to this problem is to use a wrapper element inside of the button and apply `display:flex` to it. The `<button>` can then be styled as normal.
 
 
 ### 10. `align-items: baseline` doesn't work with nested flex containers
