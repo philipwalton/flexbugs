@@ -69,7 +69,7 @@ The flexbox spec defines an initial `flex-shrink` value of `1` but says items sh
       <a href="http://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &mdash; <em>workaround</em><br>
     </td>
     <td>
-      Internet Explorer 10-11 (fixed in 12+)
+      Internet Explorer 10-11 (fixed in Edge)
     </td>
   </tr>
 </table>
@@ -94,7 +94,7 @@ Most of the time, this can be fixed by simply setting `max-width:100%` on the fl
       <a href="http://codepen.io/philipwalton/pen/KwNvLo">3.1.b</a> &mdash; <em>workaround</em><br>
       <a href="http://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &mdash; <em>bug</em><br>
     </td>
-    <td>Internet Explorer 10-11 (fixed in 12+)</td>
+    <td>Internet Explorer 10-11 (fixed in Edge)</td>
     <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625</a></td>
   </tr>
 </table>
@@ -121,7 +121,7 @@ There are cases, however, where no good workaround exists. Demo [3.2.a](http://c
       <a href="http://codepen.io/philipwalton/pen/OPbQgO">3.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/pen/ByQYZJ">3.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10-11 (fixed in 12+)</td>
+    <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
 </table>
 
@@ -149,7 +149,7 @@ When using the `flex` shorthand, always include a unit in the `flex-basis` porti
       <a href="http://codepen.io/philipwalton/pen/LEbQON">5.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/pen/wBoyry">5.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10-11 (fixed in 12+)</td>
+    <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
 </table>
 
@@ -177,7 +177,7 @@ You can avoid this problem by adding a container element to house the element wi
       <a href="http://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10 (fixed in 11+)</td>
+    <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
 </table>
 
@@ -200,7 +200,7 @@ If you have to support IE 10, the best solution is to *always* set an explicit `
       <a href="http://codepen.io/philipwalton/pen/XJMWem">7.1.b</a> &mdash; <em>workaround</em><br>
       <a href="http://codepen.io/philipwalton/pen/ZYLdqb">7.1.c</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10-11 (fixed in 12+)</td>
+    <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
 </table>
 
@@ -227,24 +227,24 @@ There are two ways to work around this bug. The first requires no additional mar
       <a href="http://codepen.io/philipwalton/pen/ogBrye">8.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/pen/bNgPKz">8.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10-11 (fixed in 12+)</td>
+    <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
   <tr valign="top">
     <td>
       <a href="http://codepen.io/philipwalton/pen/VYJgJo">8.2.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/philipwalton/pen/pvXGmW">8.2.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10 (fixed in 11+)</td>
+    <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
 </table>
 
 IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) shows `flex:0 0 calc(100%/3)` not working in IE.
 
-In IE 10, `calc()` functions don't even work in longhand `flex-basis` declarations (though this does work in IE 11+). Demo [8.2.a](http://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
+In IE 10, `calc()` functions don't even work in longhand `flex-basis` declarations (though this does work in IE 11). Demo [8.2.a](http://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
 
 #### Workaround
 
-Since this bug only affects the `flex` shorthand declaration in IE 11, an easy workaround (if you only need to support IE 11+) is to always specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
+Since this bug only affects the `flex` shorthand declaration in IE 11, an easy workaround (if you only need to support IE 11) is to always specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
 
 If you need to support IE 10 as well, then you'll need to fall back to setting `width` or `height` (depending on the container's `flex-direction` property). You can do this by setting a `flex-basis` value of `auto`, which will instruct the browser to use the element's [main size](http://dev.w3.org/csswg/css-flexbox/#box-model) property (i.e., its `width` or `height`). Demo [8.2.b](http://codepen.io/philipwalton/pen/pvXGmW) offers an example of this.
 
