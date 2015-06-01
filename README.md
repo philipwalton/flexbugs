@@ -18,6 +18,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 11. [Vertical, percentage-based padding and margins don't work on flex items](#11-vertical-percentage-based-padding-and-margins-dont-work-on-flex-items)
+12. [Justify-content combine values](#12-justify-content-combine-values)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -324,9 +325,26 @@ This bug only affects nested containers set to `display: flex`. If you set the n
 
 Padding and margins, when set in percentages, are always relative to the parent element's width (not height). This is even true for top and bottom padding and margins. In Firefox, when applying a percentage-based padding or margin to the top or bottom of a flex item, the value computes to zero. Demo [11.1.a](http://codepen.io/philipwalton/pen/EjjEmW) shows an example of this.
 
+### 12. Justify-content combine values
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/manar_mk/pen/xbrjad">12</a> &mdash; <em>bug</em><br>
+    </td>
+    <td>Chrome 40(fixed in 41 version)</td>
+    <td>https://code.google.com/p/chromium/issues/detail?id=451837</td>
+  </tr>
+</table>
+
+`justify-content` works incorrect. It combines values instead of overwriting them. Here is the demo [12](http://codepen.io/manar_mk/pen/xbrjad)
+
 #### Workaround
 
-This bug only affects flex items, so the solution is to apply any vertical padding or margins to an inner wrapper element. Demo [11.1.b](http://codepen.io/philipwalton/pen/vOORJa) shows an example of this.
+Just don't overwrite your `justify-content` property. I used different classes like `.justify_space-between` or `.justify_center`
 
 ## Acknowledgements
 
