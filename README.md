@@ -330,13 +330,15 @@ Padding and margins, when set in percentages, are always relative to the parent 
 <table>
   <tr>
     <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
   </tr>
   <tr valign="top">
     <td>
       <a href="http://codepen.io/manar_mk/pen/xbrjad">12</a> &mdash; <em>bug</em><br>
     </td>
     <td>Chrome 40(fixed in 41 version)</td>
-    <td>https://code.google.com/p/chromium/issues/detail?id=451837</td>
+    <td><a href="https://code.google.com/p/chromium/issues/detail?id=451837">Chrome#451837</a></td>
   </tr>
 </table>
 
