@@ -340,9 +340,9 @@ This bug only affects flex items, so the solution is to apply any vertical paddi
   <tr valign="top">
     <td>
       <a href="http://codepen.io/tzi/pen/rVmbvK">12.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/tzi/pen/doWEyo">12.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/tzi/pen/doWEyo">12.1.b</a> &mdash; <em>workaround</em><br>
       <a href="http://codepen.io/tzi/pen/NqjZKe">12.2.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/tzi/pen/pJPXzX">12.2.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/tzi/pen/pJPXzX">12.2.b</a> &mdash; <em>workaround</em><br>
     </td>
     <td>
       Safari<br>
