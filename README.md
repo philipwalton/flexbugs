@@ -353,7 +353,7 @@ This bug only affects flex items, so the solution is to apply any vertical paddi
   </tr>
 </table>
 
-When several flex items are too big to fit inside in a single line in their container, those items should wrap according to the container `flex-wrap` property. If you set a minimum size using a `min-width`, it will never wrap and overflow instead. If you set a minimum size using a `flex-basis` and `flex-shrink: 0`, it never wrap and will shrink instead.
+When several flex items are too big to fit inside in a single line in their container, those items should wrap according to the container `flex-wrap` property. On Safari, if you set a minimum size using a `min-width`, it will never wrap and overflow instead. If you set a minimum size using a `flex-basis` and `flex-shrink: 0`, it will never wrap and shrink instead.
 
 #### Workaround
 
