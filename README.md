@@ -328,6 +328,36 @@ Padding and margins, when set in percentages, are always relative to the parent 
 
 This bug only affects flex items, so the solution is to apply any vertical padding or margins to an inner wrapper element. Demo [11.1.b](http://codepen.io/philipwalton/pen/vOORJa) shows an example of this.
 
+### 12. Minimum content sizing and wrapping
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/tzi/pen/rVmbvK">12.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/tzi/pen/doWEyo">12.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/tzi/pen/NqjZKe">12.2.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/tzi/pen/pJPXzX">12.2.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>
+      Safari<br>
+    </td>
+    <td>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=136041">Webkit #136041</a><br>
+    </td>
+  </tr>
+</table>
+
+When several flex items are too big to fit inside in a single line in their container, those items should wrap according to the container `flex-wrap` property. If you set a minimum size using a `min-width`, it will never wrap and overflow instead. If you set a minimum size using a `flex-basis` and `flex-shrink: 0`, it never wrap and will shrink instead.
+
+#### Workaround
+
+Adding a `display: inline-block` on flex items fix this. Demo [12.1.b](http://codepen.io/philipwalton/pen/doWEyo) shows an example with `min-width`. Demo [12.2.b](http://codepen.io/philipwalton/pen/pJPXzX) shows an example with `flex-basis`.
+
 ## Acknowledgements
 
 Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Bugs](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
