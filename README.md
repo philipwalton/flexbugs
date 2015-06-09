@@ -18,6 +18,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 11. [Vertical, percentage-based padding and margins don't work on flex items](#11-vertical-percentage-based-padding-and-margins-dont-work-on-flex-items)
+12. [Minimum content sizing and wrapping](#12-minimum-content-sizing-and-wrapping)
 
 ### 1. Minimum content sizing of flex items not honored
 
