@@ -9,7 +9,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 
 1. [Minimum content sizing of flex items not honored](#1-minimum-content-sizing-of-flex-items-not-honored)
 2. [Column flex items set to `align-items:center` overflow their container](#2-column-flex-items-set-to-align-itemscenter-overflow-their-container)
-3. [`min-height` on a column flex container won't apply to its flex items](#3-min-height-on-a-column-flex-container-wont-apply-to-its-flex-items)
+3. [`min-height` on a flex container won't apply to its flex items](#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
@@ -80,7 +80,7 @@ When using `align-items:center` on a flex container in the column direction, the
 
 Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
 
-### 3. `min-height` on a column flex container won't apply to its flex items
+### 3. `min-height` on a flex container won't apply to its flex items
 
 <table>
   <tr>
@@ -101,7 +101,7 @@ Most of the time, this can be fixed by simply setting `max-width:100%` on the fl
 
 In order for flex items to size and position themselves, they need to know how big their containers are. For example, if a flex item is supposed to be vertically centered, it needs to know how tall its parent is. The same is true when flex items are told to grow to fill the remaining empty space.
 
-In IE 10-11, `min-height` declarations on flex containers in the column direction work to size the containers themselves, but their flex item children do not seem to know the size of their parents. They act as if no height has been set at all.
+In IE 10-11, `min-height` declarations on flex containers work to size the containers themselves, but their flex item children do not seem to know the size of their parents. They act as if no height has been set at all.
 
 #### Workaround
 
