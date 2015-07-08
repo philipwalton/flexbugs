@@ -17,8 +17,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
-11. [Vertical, percentage-based padding and margins don't work on flex items](#11-vertical-percentage-based-padding-and-margins-dont-work-on-flex-items)
-12. [Min and max size declarations are ignored when wrapping flex items](#12-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
+11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -307,7 +306,8 @@ In Firefox, nested flex containers don't contribute to the baseline that other f
 
 This bug only affects nested containers set to `display: flex`. If you set the nested container to `display: inline-flex` it works as expected. Note that when using `inline-flex` you will probably also need to set the width to `100%`.
 
-### 11. Vertical, percentage-based padding and margins don't work on flex items.
+
+### 11. Min and max size declarations are ignored when wrapping flex items
 
 <table>
   <tr>
@@ -316,30 +316,8 @@ This bug only affects nested containers set to `display: flex`. If you set the n
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/anon/pen/EjjEmW">11.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/anon/pen/vOORJa">11.1.b</a> &mdash; <em>workaround</em>
-    </td>
-    <td>Firefox</td>
-  </tr>
-</table>
-
-Padding and margins, when set in percentages, are always relative to the parent element's width (not height). This is even true for top and bottom padding and margins. In Firefox, when applying a percentage-based padding or margin to the top or bottom of a flex item, the value computes to zero. Demo [11.1.a](http://codepen.io/philipwalton/pen/EjjEmW) shows an example of this.
-
-#### Workaround
-
-This bug only affects flex items, so the solution is to apply any vertical padding or margins to an inner wrapper element. Demo [11.1.b](http://codepen.io/philipwalton/pen/vOORJa) shows an example of this.
-
-### 12. Min and max size declarations are ignored when wrapping flex items
-
-<table>
-  <tr>
-    <th align="left">Demos</th>
-    <th align="left">Browsers affected</th>
-  </tr>
-  <tr valign="top">
-    <td>
-      <a href="http://codepen.io/anon/pen/BNrGwN">12.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/anon/pen/RPMqjz">12.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/anon/pen/BNrGwN">11.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/anon/pen/RPMqjz">11.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Safari</td>
   </tr>
@@ -347,13 +325,13 @@ This bug only affects flex items, so the solution is to apply any vertical paddi
 
 Safari uses min/max width/height declarations for actually rendering the size of flex items, but it ignores those values when calculating how many items should be on a single line of a multi-line flex container. Instead, it simply uses the item's `flex-basis` value, or its width if the flex basis is set to `auto`.
 
-This is problematic when using the `flex: 1` shorthand because that sets the flex basis to `0%`, and an infinite number of flex items could fit on a single line if the browser thinks their widths are all zero. Demo [12.1.a](http://codepen.io/philipwalton/pen/BNrGwN) show an example of this happening.
+This is problematic when using the `flex: 1` shorthand because that sets the flex basis to `0%`, and an infinite number of flex items could fit on a single line if the browser thinks their widths are all zero. Demo [11.1.a](http://codepen.io/philipwalton/pen/BNrGwN) show an example of this happening.
 
 This is also problematic when creating fluid layouts where you want your flex items to be no bigger than X but no smaller than Y. Since Safari ignores those values when determining how many items fit on a line, that strategy won't work.
 
 #### Workaround
 
-The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [12.1.b](http://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
+The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](http://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
 
 ## Acknowledgments
 
