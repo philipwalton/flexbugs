@@ -66,7 +66,7 @@ The flexbox spec defines an initial `flex-shrink` value of `1` but says items sh
   <tr valign="top">
     <td>
       <a href="http://codepen.io/philipwalton/pen/xbRpMe">2.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="http://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
       Internet Explorer 10-11 (fixed in Edge)
