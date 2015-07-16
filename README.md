@@ -334,6 +334,28 @@ This is also problematic when creating fluid layouts where you want your flex it
 
 The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](http://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
 
+### 12. Inline elements not treated as flex-items.
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/hrgdavor/pen/QbBLrZ">12.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/hrgdavor/pen/doKwPw">12.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10 (fixed in 11)</td>
+  </tr>
+</table>
+
+IE 10 does not treat inline elements as flex-items. This also includes the ::before and ::after pseudo elements.
+
+#### Workaround
+
+Just set the display property to: block, flex, inline-block, inline-flex.
+
 ## Acknowledgments
 
 Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Bugs](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
