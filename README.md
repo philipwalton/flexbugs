@@ -346,11 +346,13 @@ The only way to avoid this issue is to make sure to set the flex basis to a valu
       <a href="http://codepen.io/hrgdavor/pen/QbBLrZ">12.1.a</a> &mdash; <em>bug</em><br>
       <a href="http://codepen.io/hrgdavor/pen/doKwPw">12.1.b</a> &mdash; <em>workaround</em>
     </td>
-    <td>Internet Explorer 10 (fixed in 11)</td>
+    <td>Internet Explorer 10 (partialy fixed in 11)</td>
   </tr>
 </table>
 
 IE 10 does not treat inline elements as flex-items. This also includes the ::before and ::after pseudo elements.
+
+IE 11 still does no treat ::before and ::after as flex-items unless the workaround is applied.
 
 #### Workaround
 
