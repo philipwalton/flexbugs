@@ -18,6 +18,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
+12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -333,6 +334,28 @@ This is also problematic when creating fluid layouts where you want your flex it
 #### Workaround
 
 The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](http://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
+
+### 12. Inline elements are not treated as flex-items
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/pen/qdMgdg">12.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/NqLoNp">12.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10-11 (fixed in Edge)</td>
+  </tr>
+</table>
+
+Inline element, including `::before` and `::after` pseudo-elements, are not treated as flex items in IE 10. IE 11 fixed this bug with regular inline element, but it still affects the `::before` and `::after` pseudo-elements.
+
+#### Workaround
+
+This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](http://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
 
 ## Acknowledgments
 
