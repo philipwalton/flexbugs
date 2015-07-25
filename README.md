@@ -42,6 +42,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
     </td>
     <td>
       <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898</a><br>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=136754">Safari #136754</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1043520">Firefox #1043520</a>
     </td>
   </tr>
