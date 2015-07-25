@@ -36,7 +36,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
       <a href="http://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
-      Chrome<br>
+      Chrome (fixed in 44)<br>
       Opera<br>
       Safari
     </td>
