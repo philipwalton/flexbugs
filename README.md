@@ -316,6 +316,7 @@ This bug only affects nested containers set to `display: flex`. If you set the n
   <tr>
     <th align="left">Demos</th>
     <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
   </tr>
   <tr valign="top">
     <td>
@@ -323,6 +324,9 @@ This bug only affects nested containers set to `display: flex`. If you set the n
       <a href="http://codepen.io/anon/pen/RPMqjz">11.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Safari</td>
+    <td>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=136041">Safari #136041</a>
+    </td>
   </tr>
 </table>
 
