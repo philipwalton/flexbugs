@@ -37,7 +37,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
     </td>
     <td>
       Chrome (fixed in 44)<br>
-      Opera<br>
+      Opera (fixed in 31)<br>
       Safari
     </td>
     <td>
