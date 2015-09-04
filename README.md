@@ -15,7 +15,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
 7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
-9. [`<button>` elements can't be flex containers](#9-button-elements-cant-be-flex-containers)
+9. [Some HTML elements can't be flex containers](#9-some-html-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
@@ -251,7 +251,7 @@ Since this bug only affects the `flex` shorthand declaration in IE 11, an easy w
 
 If you need to support IE 10 as well, then you'll need to fall back to setting `width` or `height` (depending on the container's `flex-direction` property). You can do this by setting a `flex-basis` value of `auto`, which will instruct the browser to use the element's [main size](http://dev.w3.org/csswg/css-flexbox/#box-model) property (i.e., its `width` or `height`). Demo [8.2.b](http://codepen.io/philipwalton/pen/pvXGmW) offers an example of this.
 
-### 9. `<button>` elements can't be flex containers
+### 9. Some HTML elements can't be flex containers
 
 <table>
   <tr>
@@ -262,10 +262,16 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
   <tr valign="top">
     <td>
       <a href="http://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="http://codepen.io/philipwalton/pen/wKBqdY">9.2.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
-      Firefox
+      Chrome<br>
+      Edge<br>
+      Firefox<br>
+      Opera<br>
+      Safari
     </td>
     <td>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869</a>
@@ -273,12 +279,13 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
   </tr>
 </table>
 
-Unlike `<input>` elements of type "button" or "submit", the HTML5 `<button>` element can contain child nodes. This allows you to put things other than text (e.g. icons) inside of `<button>` elements without having to resort to using semantically incorrect tags like `<div>` or `<a>`. Firefox, however, does not allow the `<button>` element to be a flex container.
+Certain HTML elements, like `<fieldset>` and `<button>`, do not work as flex containers. The browsers default rendering of those element's UI conflicts with the `display: flex` declaration.
+
+Demo [9.1.a](http://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements don't work in Firefox, and demo [9.2.a](http://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers.
 
 #### Workaround
 
-The simple solution to this problem is to use a wrapper element inside of the button and apply `display:flex` to it. The `<button>` can then be styled as normal.
-
+The simple solution to this problem is to use a wrapper element that can be a flex container (like a `<div>`) directly inside of the element that can't. Demos [9.1.b](http://codepen.io/philipwalton/pen/mywZpr) and [9.2.b](http://codepen.io/philipwalton/pen/EVaRaX) show workaround for the `<button>` and `<fieldset>` elements, respectively.
 
 ### 10. `align-items: baseline` doesn't work with nested flex containers
 
@@ -356,7 +363,7 @@ The only way to avoid this issue is to make sure to set the flex basis to a valu
   </tr>
 </table>
 
-Inline element, including `::before` and `::after` pseudo-elements, are not treated as flex items in IE 10. IE 11 fixed this bug with regular inline element, but it still affects the `::before` and `::after` pseudo-elements.
+Inline elements, including `::before` and `::after` pseudo-elements, are not treated as flex items in IE 10. IE 11 fixed this bug with regular inline element, but it still affects the `::before` and `::after` pseudo-elements.
 
 #### Workaround
 
