@@ -274,6 +274,7 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
       Safari
     </td>
     <td>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=262679">Chrome #262679</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869</a>
     </td>
   </tr>
