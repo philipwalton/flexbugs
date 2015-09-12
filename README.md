@@ -220,7 +220,7 @@ This bug can manifest itself in two ways: when not setting any flex values or wh
 
 #### Workaround
 
-If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` or `flex` value on all of your flex items. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](http://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
+If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` value on all of your flex items, or to always use the longhand form (rather than the shorthand) in `flex` declarations to avoid the gotchas shown in the table above. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](http://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
 
 ### 7. `flex-basis` doesn't account for `box-sizing:border-box`
 
