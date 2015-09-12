@@ -178,7 +178,9 @@ You can avoid this problem by adding a container element to house the element wi
   <tr valign="top">
     <td>
       <a href="http://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="http://codepen.io/philipwalton/pen/zvvQdB">6.2.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/LppoOj">6.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
@@ -186,9 +188,39 @@ You can avoid this problem by adding a container element to house the element wi
 
 When IE 10 was being developed, the [March 2012 spec](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flexibility) said the initial value for the `flex` property was `none`, which translates to `0 0 auto`. The [most recent spec](http://www.w3.org/TR/css3-flexbox/#flex-property) sets the initial `flex` value to the initial values of the individual flexibility properties, which corresponds to `initial` or `0 1 auto`. Notice that this means IE 10 uses a different initial `flex-shrink` value (technically it was called `neg-flex` in the spec at the time) from every other browser. Other browsers (including IE 11) use an initial value of `1` rather than `0`.
 
+This bug can manifest itself in two ways: when not setting any flex values or when using one of the `flex` shorthands. In both cases, flex items in IE 10 will behave differently from all other browsers. The following table illustrates the difference:
+
+<table>
+  <tr>
+    <th align="left">Declaration</th>
+    <th align="left">What it should mean</th>
+    <th align="left">What it means in IE 10</th>
+  </tr>
+  <tr>
+    <td>(no flex declaration)</td>
+    <td><code>flex: 0 1 auto</code></td>
+    <td><code>flex: 0 0 auto</code></td>
+  </tr>
+  <tr>
+    <td><code>flex: 1</code></td>
+    <td><code>flex: 1 1 0%</code></td>
+    <td><code>flex: 1 0 0px</code></td>
+  </tr>
+  <tr>
+    <td><code>flex: auto</code></td>
+    <td><code>flex: 1 1 auto</code></td>
+    <td><code>flex: 1 0 auto</code></td>
+  </tr>
+  <tr>
+    <td><code>flex: initial</code></td>
+    <td><code>flex: 0 1 auto</code></td>
+    <td><code>flex: 0 0 auto</code></td>
+  </tr>
+</table>
+
 #### Workaround
 
-If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` or `flex` value on all of your flex items. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error.
+If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` or `flex` value on all of your flex items. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](http://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
 
 ### 7. `flex-basis` doesn't account for `box-sizing:border-box`
 
