@@ -19,7 +19,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
-13. [Flex items grow when it contains large images](#13-flex-items-grow-when-it-contains-large-images)
+13. [Flex items always grow when they contain large images](#13-flex-items-always-grow-when-they-contain-large-images)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -416,7 +416,7 @@ Inline elements, including `::before` and `::after` pseudo-elements, are not tre
 This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](http://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
 
 
-### 13. Flex items grow when it contains large images
+### 13. Flex items always grow when they contain large images
 
 <table>
   <tr>
