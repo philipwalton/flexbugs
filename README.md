@@ -19,6 +19,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
+13. [Flex items grow when it contains large images](#13-flex-items-grow-when-it-contains-large-images)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -58,6 +59,7 @@ According to the [current flexbox specification](http://www.w3.org/TR/css-flexbo
 
 The flexbox spec defines an initial `flex-shrink` value of `1` but says items should not shrink below their default minimum content size. You can usually get this same behavior by setting a `flex-shrink` value of `0` (instead of the default `1`) and a `flex-basis` value of `auto`. That will cause the flex item to be at least as big as its width or height (if declared) or its default content size.
 
+
 ### 2. Column flex items set to `align-items:center` overflow their container
 
 <table>
@@ -81,6 +83,7 @@ When using `align-items:center` on a flex container in the column direction, the
 #### Workaround
 
 Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
+
 
 ### 3. `min-height` on a flex container won't apply to its flex items
 
@@ -112,6 +115,7 @@ By far the most common element to apply `min-height` to is the body element, and
 
 For cases where `min-height` is required, the workaround is to add a wrapper element around the flex container that is itself a flex container in the column direction. For some reason nested flex containers are not affected by this bug. Demo [3.2.a](http://codepen.io/philipwalton/pen/VYmbmj) shows a visual design where `min-height` is required, and demo [3.2.b](http://codepen.io/philipwalton/pen/JdvdJE) shows how this bug can be avoided with a wrapper element.
 
+
 ### 4. `flex` shorthand declarations with unitless `flex-basis` values are ignored
 
 <table>
@@ -140,6 +144,7 @@ When using the `flex` shorthand, always include a unit in the `flex-basis` porti
 
 **Important:** using a `flex` value of something like `1 0 0px` can still be a problem because many CSS minifiers will convert `0px` to `0`. To avoid this, make sure to use `0%` instead of `0px` since most minifiers won't touch percentage values for other reasons.
 
+
 ### 5. Column flex items don't always preserve intrinsic aspect ratios
 
 <table>
@@ -167,6 +172,7 @@ The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has r
 #### Workaround
 
 You can avoid this problem by adding a container element to house the element with the intrinsic aspect ratio. Since doing this causes the element with the intrinsic aspect ratio to no longer be a flex item, it will be sized normally.
+
 
 ### 6. The default `flex` value has changed
 
@@ -222,6 +228,7 @@ This bug can manifest itself in two ways: when not setting any flex values or wh
 
 If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` value on all of your flex items, or to always use the longhand form (rather than the shorthand) in `flex` declarations to avoid the gotchas shown in the table above. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](http://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
 
+
 ### 7. `flex-basis` doesn't account for `box-sizing:border-box`
 
 <table>
@@ -249,6 +256,7 @@ There are two ways to work around this bug. The first requires no additional mar
 
 1. Instead of setting an explicit `flex-basis` value, use `auto`, and then set an explicit width or height. Demo [7.1.b](http://codepen.io/philipwalton/pen/XJMWem) shows this.
 2. Use a wrapper element that contains no border or padding so it works with the content box model. Demo [7.1.c](http://codepen.io/philipwalton/pen/ZYLdqb) show this.
+
 
 ### 8. `flex-basis` doesn't support `calc()`
 
@@ -282,6 +290,7 @@ In IE 10, `calc()` functions don't even work in longhand `flex-basis` declaratio
 Since this bug only affects the `flex` shorthand declaration in IE 11, an easy workaround (if you only need to support IE 11) is to always specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
 
 If you need to support IE 10 as well, then you'll need to fall back to setting `width` or `height` (depending on the container's `flex-direction` property). You can do this by setting a `flex-basis` value of `auto`, which will instruct the browser to use the element's [main size](http://dev.w3.org/csswg/css-flexbox/#box-model) property (i.e., its `width` or `height`). Demo [8.2.b](http://codepen.io/philipwalton/pen/pvXGmW) offers an example of this.
+
 
 ### 9. Some HTML elements can't be flex containers
 
@@ -321,6 +330,7 @@ Demo [9.1.a](http://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` ele
 #### Workaround
 
 The simple solution to this problem is to use a wrapper element that can be a flex container (like a `<div>`) directly inside of the element that can't. Demos [9.1.b](http://codepen.io/philipwalton/pen/mywZpr) and [9.2.b](http://codepen.io/philipwalton/pen/EVaRaX) show workaround for the `<button>` and `<fieldset>` elements, respectively.
+
 
 ### 10. `align-items: baseline` doesn't work with nested flex containers
 
@@ -382,6 +392,7 @@ This is also problematic when creating fluid layouts where you want your flex it
 
 The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](http://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
 
+
 ### 12. Inline elements are not treated as flex-items
 
 <table>
@@ -403,6 +414,34 @@ Inline elements, including `::before` and `::after` pseudo-elements, are not tre
 #### Workaround
 
 This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](http://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
+
+
+### 13. Flex items grow when it contains large images
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/tzi/pen/PPExrX">13.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/tzi/pen/MarZgy">13.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Firefox</td>
+    <td>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=823483">Firefox #823483</a>
+    </td>
+  </tr>
+</table>
+
+In Firefox, flex items grow when they contain an image larger than them. Even with a `max-width: 100%` declaration, the image is not resized. Demo [13.1.a](http://codepen.io/tzi/pen/PPExrX) shows the two flex items should have the same width, but the image is not resized and enlarges its container.
+
+#### Workaround
+
+This issue can be avoided by adding a `min-width: 0` on the flex item (the parent of the image). This will disable the  automatic resolution of the flex item's min-content width. Demo [13.1.b](http://codepen.io/tzi/pen/MarZgy) shows an example of this working in Firefox.
+
 
 ## Acknowledgments
 
