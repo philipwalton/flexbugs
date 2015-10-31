@@ -19,6 +19,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
+13. [Importance is ignored on flex-basis when using flex shorthand](#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -346,7 +347,6 @@ The simple solution to this problem is to use a wrapper element that can be a fl
 
 In Firefox, nested flex containers don't contribute to the baseline that other flex items should align themselves to. Demo [10.1.a](http://codepen.io/philipwalton/pen/vOOejZ) shows the line on the left incorrectly aligning itself to the second line of text on the right. It should be aligned to the first line of text, which is the inner flex container.
 
-
 #### Workaround
 
 This bug only affects nested containers set to `display: flex`. If you set the nested container to `display: inline-flex` it works as expected. Note that when using `inline-flex` you will probably also need to set the width to `100%`.
@@ -403,6 +403,28 @@ Inline elements, including `::before` and `::after` pseudo-elements, are not tre
 #### Workaround
 
 This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](http://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
+
+### 13. Importance is ignored on flex-basis when using flex shorthand
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/philipwalton/pen/ZbRoYw">13.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/rOKvNb">13.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10 (fixed in 11)</td>
+  </tr>
+</table>
+
+When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!important` to the `flex-grow` and `flex-shrink` parts but not to the `flex-basis` part. Demo [13.1.a](http://codepen.io/philipwalton/pen/ZbRoYw) shows an example of a declaration with `!important` not overriding another declaration in IE 10.
+
+#### Workaround
+
+If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](http://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
 
 ## Acknowledgments
 
