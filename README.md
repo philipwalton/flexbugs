@@ -20,6 +20,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
 13. [Importance is ignored on flex-basis when using flex shorthand](#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand)
+14. [Element not stretched when parent is itself a column flex item with `flex-grow` set via shorthand](#14-element-not-stretched-when-parent-is-itself-a-column-flex-item-with-flex-grow-set-via-shorthand)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -424,6 +425,29 @@ When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!im
 #### Workaround
 
 If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](http://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
+
+### 14. Element not stretched when parent is itself a column flex item with `flex-grow` set via shorthand
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/smoogly/pen/PZeZpo?editors=1100">14.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/smoogly/pen/rxvxyY?editors=1100">14.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 11</td>
+  </tr>
+</table>
+
+Child element will not stretch to height when container is itself inside flexbox with `flex-direction: column` and has `flex-grow` set via `flex` shorthand (e.g `flex: 1`). Demo [14.1.a](http://codepen.io/smoogly/pen/PZeZpo?editors=1100) shows an example setup where target element is not stretched to parent height in IE 11.
+
+
+#### Workaround
+
+Setting `flex-grow` via explicit rule solves the problem as shown in demo [14.1.b](http://codepen.io/smoogly/pen/rxvxyY?editors=1100) for IE 11.
 
 ## Acknowledgments
 
