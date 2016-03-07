@@ -425,6 +425,26 @@ When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!im
 
 If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](http://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
 
+### 1. percantage Height and Width ignored in stretched Flex Items in Chrome
+
+The only Solution is absolute positioning of the child Elements.
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/sebgrizzly/pen/KzVqRw?editors=1100">Chrome Height</a> &mdash; <em>bug</em><br>
+    </td>
+    <td>
+      Chrome<br>
+    </td>
+  </tr>
+</table>
+
 ## Acknowledgments
 
 Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Bugs](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
@@ -432,3 +452,6 @@ Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Fl
 ## Contributing
 
 If you've discovered a flexbox bug or would like to submit a workaround, please open an issue or submit a pull request. Make sure to submit relevant test cases or screenshots and indicate which browsers are affected.
+
+
+
