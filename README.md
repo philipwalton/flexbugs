@@ -431,4 +431,8 @@ Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Fl
 
 ## Contributing
 
-If you've discovered a flexbox bug or would like to submit a workaround, please open an issue or submit a pull request. Make sure to submit relevant test cases or screenshots and indicate which browsers are affected.
+If you've discovered a flexbox bug and would like to submit a workaround for it, please open an issue or submit a pull request. Make sure to submit relevant test cases or screenshots and indicate which browsers are affected.
+
+Please only submit bugs if they have a viable workaround and the workaround applies to most use cases. If you do not know of a workaround, but you're reasonably confident one exists, please indicate that in the issue and the community can help investigate.
+
+**Note: Do not submit bugs here in lieu of reporting them to browser vendors. [Reporting bugs to browser vendors](https://www.smashingmagazine.com/2011/09/help-the-community-report-browser-bugs/) is the best and fastest way to get bugs fixed.**
