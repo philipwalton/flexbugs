@@ -20,6 +20,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
 13. [Importance is ignored on flex-basis when using flex shorthand](#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand)
+14. [Flex containers with wrapping the container is not sized to contain its items]()
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -424,6 +425,45 @@ When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!im
 #### Workaround
 
 If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](http://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
+
+### 14. Flex containers with wrapping the container is not sized to contain its items
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking Bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/gregwhitworth/pen/LNvpea">14.1</a> &mdash; <em>bug</em><br>
+    </td>
+    <td>
+        Chrome<br>
+        Firefox<br>
+        Safari<br>
+        Opera<br>
+    </td>
+    <td>
+        <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=507397">Chrome #507397</a><br>
+        <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=995020">Firefox #995020</a><br>
+        <a href="https://bugs.webkit.org/show_bug.cgi?id=157648">Safari #157648</a>
+    </td>
+  </tr>
+</table>
+
+When you make a flex container a float or to be absolutely positioned the
+dimensions of the container are determined by its contents if they are not
+explicitly set (aka: shink-to-fit). To determine these dimensions accurately
+you need to know the dimensions from layout which the heuristics they're
+using to bypass this layout pass produces the incorrect result, thus the container
+cannot encompass its items correctly.
+
+#### Workaround
+
+In order to workaround this you need to provide the explicit number of rows and columns
+for the flex container to allow the container to size around them. Unfortionately, this
+results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
 
 ## Acknowledgments
 
