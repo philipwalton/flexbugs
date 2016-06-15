@@ -485,11 +485,11 @@ results in removing the responsiveness. Here is the same example [using the work
   </tr>
 </table>
 
-Internet Explorer 10, 11 and Edge won't stretch an `iframe` to fill flex-container's height as expected from a flex-item.
+Internet Explorer 10, 11 and Edge won't stretch an `iframe` to fill flex-container's dimensions, as expected from a flex-item.
 
 #### Workaround
 
-To apply the desired default behavior in affected browsers, simply add `min-height: 100%` to the `iframe` element.
+Depending on the `flex-direction` of flex-container (`row` or `column`) add `min-height: 100%` or `min-width: 100%` respectively to the `iframe` element.
 
 ## Acknowledgments
 
