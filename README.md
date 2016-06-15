@@ -20,7 +20,8 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 11. [Min and max size declarations are ignored when wrapping flex items](#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items)
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
 13. [Importance is ignored on flex-basis when using flex shorthand](#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand)
-14. [`iframe` won't stretch to fill flex-container](#14-iframe-wont-stretch-to-fill-flex-container)
+14. [Flex containers with wrapping the container is not sized to contain its items](#14-flex-containers-with-wrapping-the-container-is-not-sized-to-contain-its-items)
+15. [`iframe` won't stretch to fill flex-container](#14-iframe-wont-stretch-to-fill-flex-container)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -44,7 +45,6 @@ As the spec continues to evolve and vendors nail down their implementations, thi
     </td>
     <td>
       <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898</a><br>
-      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1043520">Firefox #1043520</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=146020">Safari #146020</a>
     </td>
   </tr>
@@ -311,6 +311,7 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
       <a href="https://code.google.com/p/chromium/issues/detail?id=262679">Chrome #262679</a><br>
       <a href="https://connect.microsoft.com/IE/feedback/details/1753499/edge-fieldset-element-doesnt-work-properly-as-a-flex-container-display-flex">Edge #1753499</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869</a><br>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=148826">Safari #148826</a>
     </td>
   </tr>
@@ -427,7 +428,46 @@ When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!im
 
 If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](http://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
 
-### 14. `iframe` won't stretch to fill flex-container
+### 14. Flex containers with wrapping the container is not sized to contain its items
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking Bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/gregwhitworth/pen/LNvpea">14.1</a> &mdash; <em>bug</em><br>
+    </td>
+    <td>
+        Chrome<br>
+        Firefox<br>
+        Safari<br>
+        Opera<br>
+    </td>
+    <td>
+        <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=507397">Chrome #507397</a><br>
+        <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=995020">Firefox #995020</a><br>
+        <a href="https://bugs.webkit.org/show_bug.cgi?id=157648">Safari #157648</a>
+    </td>
+  </tr>
+</table>
+
+When you make a flex container a float or to be absolutely positioned the
+dimensions of the container are determined by its contents if they are not
+explicitly set (aka: shink-to-fit). To determine these dimensions accurately
+you need to know the dimensions from layout which the heuristics they're
+using to bypass this layout pass produces the incorrect result, thus the container
+cannot encompass its items correctly.
+
+#### Workaround
+
+In order to workaround this you need to provide the explicit number of rows and columns
+for the flex container to allow the container to size around them. Unfortionately, this
+results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
+
+### 15. `iframe` won't stretch to fill flex-container
 
 <table>
   <tr>
@@ -455,4 +495,8 @@ Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Fl
 
 ## Contributing
 
-If you've discovered a flexbox bug or would like to submit a workaround, please open an issue or submit a pull request. Make sure to submit relevant test cases or screenshots and indicate which browsers are affected.
+If you've discovered a flexbox bug and would like to submit a workaround for it, please open an issue or submit a pull request. Make sure to submit relevant test cases or screenshots and indicate which browsers are affected.
+
+Please only submit bugs if they have a viable workaround and the workaround applies to most use cases. If you do not know of a workaround, but you're reasonably confident one exists, please indicate that in the issue and the community can help investigate.
+
+**Note: Do not submit bugs here in lieu of reporting them to browser vendors. [Reporting bugs to browser vendors](https://www.smashingmagazine.com/2011/09/help-the-community-report-browser-bugs/) is the best and fastest way to get bugs fixed.**
