@@ -485,7 +485,7 @@ results in removing the responsiveness. Here is the same example [using the work
   </tr>
 </table>
 
-Internet Explorer 10, 11 and Edge won't stretch an `iframe` to fill flex-container's dimensions, as expected from a flex-item.
+Internet Explorer 10, 11 and Edge won't stretch an `iframe` to fill flex-container's dimensions, as otherwise expected from a flex-item.
 
 #### Workaround
 
