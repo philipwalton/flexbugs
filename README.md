@@ -308,7 +308,7 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
     </td>
     <td>
       <a href="https://code.google.com/p/chromium/issues/detail?id=262679">Chrome #262679</a><br>
-      <a href="https://connect.microsoft.com/IE/feedback/details/1753499/edge-fieldset-element-doesnt-work-properly-as-a-flex-container-display-flex">Edge #1753499</a><br>
+      <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=148826">Safari #148826</a>
