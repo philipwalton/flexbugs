@@ -300,14 +300,14 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
       <a href="http://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
-      Chrome<br>
+      Chrome (fixed in 54)<br>
       Edge<br>
       Firefox<br>
       Opera<br>
       Safari
     </td>
     <td>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=262679">Chrome #262679</a><br>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=262679">Chrome #262679 (fixed)</a><br>
       <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
