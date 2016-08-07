@@ -21,6 +21,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
 13. [Importance is ignored on flex-basis when using flex shorthand](#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand)
 14. [Flex containers with wrapping the container is not sized to contain its items](#14-flex-containers-with-wrapping-the-container-is-not-sized-to-contain-its-items)
+15. [Blank area of svg is not clickable when it is flex item](#15-blank-area-of-svg-is-not-clickable-when-it-is-flex-item)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -465,6 +466,28 @@ cannot encompass its items correctly.
 In order to workaround this you need to provide the explicit number of rows and columns
 for the flex container to allow the container to size around them. Unfortionately, this
 results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
+
+### 15. Blank area of svg is not clickable when it is flex item
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/relaxgo/pen/dXgoWV">15.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/relaxgo/pen/akRZZb">15.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Safari</td>
+  </tr>
+</table>
+
+When svg is a flex item in Safari, the cursor or click is only valid hovering on painted area, nothing on blank area. Demo [15.1.a](http://codepen.io/relaxgo/pen/dXgoWV).
+
+#### Workaround
+
+Adding `position:relative`, `transform` or some likely style can make the whole svg clickable. Demo [15.1.b](http://codepen.io/relaxgo/pen/akRZZb).
 
 ## Acknowledgments
 
