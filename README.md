@@ -122,8 +122,8 @@ For cases where `min-height` is required, the workaround is to add a wrapper ele
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/OPbQgO">3.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ByQYZJ">3.1.b</a> &mdash; <em>workaround</em>
+      <a href="http://codepen.io/philipwalton/pen/OPbQgO">4.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/philipwalton/pen/ByQYZJ">4.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
