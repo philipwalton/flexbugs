@@ -463,7 +463,7 @@ cannot encompass its items correctly.
 #### Workaround
 
 In order to workaround this you need to provide the explicit number of rows and columns
-for the flex container to allow the container to size around them. Unfortionately, this
+for the flex container to allow the container to size around them. Unfortunately, this
 results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
 
 ## Acknowledgments
