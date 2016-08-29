@@ -40,11 +40,10 @@ As the spec continues to evolve and vendors nail down their implementations, thi
     <td>
       Chrome (fixed in 44)<br>
       Opera (fixed in 31)<br>
-      Safari
+      Safari (fixed in 10)
     </td>
     <td>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898</a><br>
-      <a href="https://bugs.webkit.org/show_bug.cgi?id=146020">Safari #146020</a>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898</a>
     </td>
   </tr>
 </table>
