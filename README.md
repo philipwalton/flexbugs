@@ -8,12 +8,12 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 ## The bugs and their workarounds
 
 1. [Minimum content sizing of flex items not honored](#1-minimum-content-sizing-of-flex-items-not-honored)
-2. [Column flex items set to `align-items:center` overflow their container](#2-column-flex-items-set-to-align-itemscenter-overflow-their-container)
+2. [Column flex items set to `align-items: center` overflow their container](#2-column-flex-items-set-to-align-itemscenter-overflow-their-container)
 3. [`min-height` on a flex container won't apply to its flex items](#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
-7. [`flex-basis` doesn't account for `box-sizing:border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
+7. [`flex-basis` doesn't account for `box-sizing: border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [Some HTML elements can't be flex containers](#9-some-html-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
@@ -59,7 +59,7 @@ According to the [current flexbox specification](http://www.w3.org/TR/css-flexbo
 
 The flexbox spec defines an initial `flex-shrink` value of `1` but says items should not shrink below their default minimum content size. You can usually get this same behavior by setting a `flex-shrink` value of `0` (instead of the default `1`) and a `flex-basis` value of `auto`. That will cause the flex item to be at least as big as its width or height (if declared) or its default content size.
 
-### 2. Column flex items set to `align-items:center` overflow their container
+### 2. Column flex items set to `align-items: center` overflow their container
 
 <table>
   <tr>
@@ -77,11 +77,11 @@ The flexbox spec defines an initial `flex-shrink` value of `1` but says items sh
   </tr>
 </table>
 
-When using `align-items:center` on a flex container in the column direction, the contents of flex item, if too big, will overflow their container in IE 10-11.
+When using `align-items: center` on a flex container in the column direction, the contents of flex item, if too big, will overflow their container in IE 10-11.
 
 #### Workaround
 
-Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
+Most of the time, this can be fixed by simply setting `max-width: 100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing: border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
 
 ### 3. `min-height` on a flex container won't apply to its flex items
 
@@ -223,7 +223,7 @@ This bug can manifest itself in two ways: when not setting any flex values or wh
 
 If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` value on all of your flex items, or to always use the longhand form (rather than the shorthand) in `flex` declarations to avoid the gotchas shown in the table above. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](http://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
 
-### 7. `flex-basis` doesn't account for `box-sizing:border-box`
+### 7. `flex-basis` doesn't account for `box-sizing: border-box`
 
 <table>
   <tr>
@@ -242,7 +242,7 @@ If you have to support IE 10, the best solution is to *always* set an explicit `
 
 An explicit `flex-basis` value (i.e., any value other than `auto`) is supposed to act just like `width` or `height`. It determines the initial size of a flex item and then the other flexibility properties allow it to grow or shrink accordingly.
 
-IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing:border-box`. Demo [7.1.a](http://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
+IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing: border-box`. Demo [7.1.a](http://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
 
 #### Workaround
 
@@ -274,7 +274,7 @@ There are two ways to work around this bug. The first requires no additional mar
   </tr>
 </table>
 
-IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) shows `flex:0 0 calc(100%/3)` not working in IE.
+IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) shows `flex: 0 0 calc(100%/3)` not working in IE.
 
 In IE 10, `calc()` functions don't even work in longhand `flex-basis` declarations (though this does work in IE 11). Demo [8.2.a](http://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
 
