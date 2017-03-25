@@ -8,12 +8,12 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 ## The bugs and their workarounds
 
 1. [Minimum content sizing of flex items not honored](#1-minimum-content-sizing-of-flex-items-not-honored)
-2. [Column flex items set to `align-items: center` overflow their container](#2-column-flex-items-set-to-align-items-center-overflow-their-container)
+2. [Column flex items set to `align-items: center` overflow their container](#2-column-flex-items-set-to-align-itemscenter-overflow-their-container)
 3. [`min-height` on a flex container won't apply to its flex items](#3-min-height-on-a-flex-container-wont-apply-to-its-flex-items)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored)
 5. [Column flex items don't always preserve intrinsic aspect ratios](#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios)
 6. [The default `flex` value has changed](#6-the-default-flex-value-has-changed)
-7. [`flex-basis` doesn't account for `box-sizing: border-box`](#7-flex-basis-doesnt-account-for-box-sizing-border-box)
+7. [`flex-basis` doesn't account for `box-sizing: border-box`](#7-flex-basis-doesnt-account-for-box-sizingborder-box)
 8. [`flex-basis` doesn't support `calc()`](#8-flex-basis-doesnt-support-calc)
 9. [Some HTML elements can't be flex containers](#9-some-html-elements-cant-be-flex-containers)
 10. [`align-items: baseline` doesn't work with nested flex containers](#10-align-items-baseline-doesnt-work-with-nested-flex-containers)
