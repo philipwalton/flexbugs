@@ -21,6 +21,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
 13. [Importance is ignored on flex-basis when using flex shorthand](#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand)
 14. [Flex containers with wrapping the container is not sized to contain its items](#14-flex-containers-with-wrapping-the-container-is-not-sized-to-contain-its-items)
+15. [`iframe` won't stretch to fill flex-container](#15-iframe-wont-stretch-to-fill-flex-container)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -465,6 +466,30 @@ cannot encompass its items correctly.
 In order to workaround this you need to provide the explicit number of rows and columns
 for the flex container to allow the container to size around them. Unfortunately, this
 results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
+
+### 15. `iframe` won't stretch to fill flex-container
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="http://codepen.io/indrekpaas/pen/bVjyaJ">15.1.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/indrekpaas/pen/MaBdqy">15.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="http://codepen.io/indrekpaas/pen/mEEyoR">15.2.a</a> &mdash; <em>bug</em><br>
+      <a href="http://codepen.io/indrekpaas/pen/zBBxbQ">15.2.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>Internet Explorer 10, 11, Edge</td>
+  </tr>
+</table>
+
+Internet Explorer 10, 11 and Edge won't stretch an `iframe` to fill flex-container's dimensions, as otherwise expected from a flex-item.
+
+#### Workaround
+
+Depending on the `flex-direction` of flex-container (`row` or `column`) add `min-height: 100%` or `min-width: 100%` respectively to the `iframe` element.
 
 ## Acknowledgments
 
