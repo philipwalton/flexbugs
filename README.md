@@ -21,6 +21,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 12. [Inline elements are not treated as flex-items](#12-inline-elements-are-not-treated-as-flex-items)
 13. [Importance is ignored on flex-basis when using flex shorthand](#13-importance-is-ignored-on-flex-basis-when-using-flex-shorthand)
 14. [Flex containers with wrapping the container is not sized to contain its items](#14-flex-containers-with-wrapping-the-container-is-not-sized-to-contain-its-items)
+15. [Clearfix pseudo elements affecting flex properties](#15-clearfix-pseudo-elements-affecting-flex-properties)
 
 ### 1. Minimum content sizing of flex items not honored
 
@@ -465,6 +466,35 @@ cannot encompass its items correctly.
 In order to workaround this you need to provide the explicit number of rows and columns
 for the flex container to allow the container to size around them. Unfortunately, this
 results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
+
+### 15. Clearfix pseudo elements affecting flex properties
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="https://codepen.io/vikrantnegi007/pen/RgPzmx">15.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/vikrantnegi007/pen/PjPEBV">15.1.b</a> &mdash; <em>workaround</em>
+    </td>
+    <td>
+      Safari
+    </td>
+  </tr>
+</table>
+
+When applying flexbox clearfix pseudo classes becomes flex childrens and obtain small width of 1px in Safari. This causes unwanted flex childrens to inherit flex properties and disturb the layout. 
+
+#### Workaround
+To fix this we set the pseudo elements width to zero by setting their `flex-basis` property to zero and adding `order` property to something other than the default 0.
+```CSS
+.clearfix:before,
+.clearfix:after {
+  flex-basis: 0;
+  order: 1;
+}
+```
 
 ## Acknowledgments
 
