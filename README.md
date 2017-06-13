@@ -455,7 +455,7 @@ If you need the `flex-basis` part of your `flex` declaration to be `!important` 
 
 When you make a flex container a float or to be absolutely positioned the
 dimensions of the container are determined by its contents if they are not
-explicitly set (aka: shink-to-fit). To determine these dimensions accurately
+explicitly set (aka: shrink-to-fit). To determine these dimensions accurately
 you need to know the dimensions from layout which the heuristics they're
 using to bypass this layout pass produces the incorrect result, thus the container
 cannot encompass its items correctly.
