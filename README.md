@@ -304,7 +304,7 @@ If you need to support IE 10 as well, then you'll need to fall back to setting `
       Edge<br>
       Firefox<br>
       Opera<br>
-      Safari (fixed in 10.1)
+      Safari (fixed in 11)
     </td>
     <td>
       <a href="https://code.google.com/p/chromium/issues/detail?id=262679">Chrome #262679 (fixed)</a><br>
