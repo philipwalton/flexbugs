@@ -338,10 +338,10 @@ The simple solution to this problem is to use a wrapper element that can be a fl
       <a href="http://codepen.io/philipwalton/pen/MwwEVd">10.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
-      Firefox
+      Firefox (fixed in 52)
     </td>
     <td>
-      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1146442">Firefox #1146442</a>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1146442">Firefox #1146442 (fixed)</a>
     </td>
   </tr>
 </table>
