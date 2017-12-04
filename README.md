@@ -20,7 +20,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 11. [Min and max size declarations are ignored when wrapping flex items](#flexbug-11)
 12. [Inline elements are not treated as flex-items](#flexbug-12)
 13. [Importance is ignored on flex-basis when using flex shorthand](#flexbug-13)
-14. [Flex containers with wrapping the container is not sized to contain its items](#flexbug-14)
+14. [Shrink-to-fit containers with `flex-flow: column wrap` do not contain their items](#flexbug-14)
 
 
 <!-- To preserve old links -->
@@ -510,7 +510,7 @@ If you need the `flex-basis` part of your `flex` declaration to be `!important` 
 
 ### Flexbug #14
 
-_Flex containers with wrapping the container is not sized to contain its items_
+_Shrink-to-fit containers with `flex-flow: column wrap` do not contain their items_
 
 <table>
   <tr>
@@ -520,7 +520,9 @@ _Flex containers with wrapping the container is not sized to contain its items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/gregwhitworth/pen/LNvpea">14.1</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/vWbdZW">14.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/RjvQgx">14.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/MOxQBg">14.1.c</a> &mdash; <em>workaround</em>
     </td>
     <td>
         Chrome<br>
@@ -536,18 +538,16 @@ _Flex containers with wrapping the container is not sized to contain its items_
   </tr>
 </table>
 
-When you make a flex container a float or to be absolutely positioned the
-dimensions of the container are determined by its contents if they are not
-explicitly set (aka: shrink-to-fit). To determine these dimensions accurately
-you need to know the dimensions from layout which the heuristics they're
-using to bypass this layout pass produces the incorrect result, thus the container
-cannot encompass its items correctly.
+If you float a flex container, use `inline-flex`, or absolutely position it, the size of the container becomes determined by its content (a.k.a shrink-to-fit).
+
+When using `flex-flow: column wrap`, some browsers do not properly size the container based on its content, and there is unwanted overflow. Demo [14.1.a](https://codepen.io/philipwalton/pen/vWbdZW) shows an example of this.
 
 #### Workaround
 
-In order to workaround this you need to provide the explicit number of rows and columns
-for the flex container to allow the container to size around them. Unfortunately, this
-results in removing the responsiveness. Here is the same example [using the workaround](http://codepen.io/gregwhitworth/pen/yOrYEp).
+If your container has a fixed height (usually the case when you enable wrapping), you avoid this bug by using `flex-flow: row wrap` (note `row` instead of `column`) and fake the column behavior by updating the container's [writing mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) (and reseting it on the items). Demo [14.1.b](https://codepen.io/philipwalton/pen/RjvQgx) shows an example of this working in all modern browsers.
+
+**Note:** To use this workaround in Safari 10 you may need to set explicit dimensions on the flex items. Demo [14.1.c](https://codepen.io/philipwalton/pen/MOxQBg) shows an example of how this can be needed in Safari 10.
+
 
 ## Acknowledgments
 
