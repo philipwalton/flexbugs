@@ -38,10 +38,10 @@ _Minimum content sizing of flex items not honored_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/MYbrrr">1.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ByQJOQ">1.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ByQJqQ">1.2.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/MYbrrr">1.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ByQJOQ">1.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ByQJqQ">1.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
       Chrome (fixed in 44)<br>
@@ -80,8 +80,8 @@ _Column flex items set to `align-items:center` overflow their container_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/xbRpMe">2.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/xbRpMe">2.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
       Internet Explorer 10-11 (fixed in Edge)
@@ -111,10 +111,10 @@ _`min-height` on a flex container won't apply to its flex items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/RNoZJP">3.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/KwNvLo">3.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/JdvdJE">3.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/RNoZJP">3.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/KwNvLo">3.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/JdvdJE">3.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
     <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625</a></td>
@@ -146,8 +146,8 @@ _`flex` shorthand declarations with unitless `flex-basis` values are ignored_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/OPbQgO">4.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ByQYZJ">4.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/OPbQgO">4.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ByQYZJ">4.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -180,8 +180,8 @@ _Column flex items don't always preserve intrinsic aspect ratios_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/LEbQON">5.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/wBoyry">5.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/LEbQON">5.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/wBoyry">5.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -214,10 +214,10 @@ _The default `flex` value has changed_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/zvvQdB">6.2.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/LppoOj">6.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/zvvQdB">6.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/LppoOj">6.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
@@ -274,9 +274,9 @@ _`flex-basis` doesn't account for `box-sizing:border-box`_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/JoWjyb">7.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/XJMWem">7.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ZYLdqb">7.1.c</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/JoWjyb">7.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/XJMWem">7.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ZYLdqb">7.1.c</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -308,15 +308,15 @@ _`flex-basis` doesn't support `calc()`_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/ogBrye">8.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/bNgPKz">8.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/ogBrye">8.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/bNgPKz">8.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/VYJgJo">8.2.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/pvXGmW">8.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/VYJgJo">8.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/pvXGmW">8.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
@@ -348,10 +348,10 @@ _Some HTML elements can't be flex containers_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/wKBqdY">9.2.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/wKBqdY">9.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
       Chrome<br>
@@ -394,8 +394,8 @@ _`align-items: baseline` doesn't work with nested flex containers_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/vOOejZ">10.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/MwwEVd">10.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/vOOejZ">10.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/MwwEVd">10.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
       Firefox (fixed in 52)
@@ -428,8 +428,8 @@ _Min and max size declarations are ignored when wrapping flex items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/anon/pen/BNrGwN">11.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/anon/pen/RPMqjz">11.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/anon/pen/BNrGwN">11.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/anon/pen/RPMqjz">11.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Safari (fixed in 10.1)</td>
     <td>
@@ -463,8 +463,8 @@ _Inline elements are not treated as flex-items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/qdMgdg">12.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/NqLoNp">12.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/qdMgdg">12.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/NqLoNp">12.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -491,8 +491,8 @@ _Importance is ignored on flex-basis when using flex shorthand_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/ZbRoYw">13.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/rOKvNb">13.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/ZbRoYw">13.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/rOKvNb">13.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
@@ -520,9 +520,9 @@ _Shrink-to-fit containers with `flex-flow: column wrap` do not contain their ite
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/vWbdZW">14.1.a</a> &mdash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/RjvQgx">14.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/MOxQBg">14.1.c</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/vWbdZW">14.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/RjvQgx">14.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/MOxQBg">14.1.c</a> &ndash; <em>workaround</em>
     </td>
     <td>
         Chrome<br>
