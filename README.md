@@ -38,10 +38,10 @@ _Minimum content sizing of flex items not honored_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/MYbrrr">1.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ByQJOQ">1.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ByQJqQ">1.2.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/MYbrrr">1.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ByQJOQ">1.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ByQJqQ">1.2.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
       Chrome (fixed in 44)<br>
@@ -80,8 +80,8 @@ _Column flex items set to `align-items:center` overflow their container_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/xbRpMe">2.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/xbRpMe">2.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ogYpVv">2.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
       Internet Explorer 10-11 (fixed in Edge)
@@ -111,10 +111,10 @@ _`min-height` on a flex container won't apply to its flex items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/RNoZJP">3.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/KwNvLo">3.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="http://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/JdvdJE">3.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/RNoZJP">3.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/KwNvLo">3.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/JdvdJE">3.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
     <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625</a></td>
@@ -127,9 +127,9 @@ In IE 10-11, `min-height` declarations on flex containers work to size the conta
 
 #### Workaround
 
-By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have any content below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work as shown in demo [3.1.b](http://codepen.io/philipwalton/pen/KwNvLo).
+By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have any content below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work as shown in demo [3.1.b](https://codepen.io/philipwalton/pen/KwNvLo).
 
-For cases where `min-height` is required, the workaround is to add a wrapper element around the flex container that is itself a flex container in the column direction. For some reason nested flex containers are not affected by this bug. Demo [3.2.a](http://codepen.io/philipwalton/pen/VYmbmj) shows a visual design where `min-height` is required, and demo [3.2.b](http://codepen.io/philipwalton/pen/JdvdJE) shows how this bug can be avoided with a wrapper element.
+For cases where `min-height` is required, the workaround is to add a wrapper element around the flex container that is itself a flex container in the column direction. For some reason nested flex containers are not affected by this bug. Demo [3.2.a](https://codepen.io/philipwalton/pen/VYmbmj) shows a visual design where `min-height` is required, and demo [3.2.b](https://codepen.io/philipwalton/pen/JdvdJE) shows how this bug can be avoided with a wrapper element.
 
 
 <!-- To preserve old links -->
@@ -146,8 +146,8 @@ _`flex` shorthand declarations with unitless `flex-basis` values are ignored_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/OPbQgO">4.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ByQYZJ">4.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/OPbQgO">4.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ByQYZJ">4.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -180,8 +180,8 @@ _Column flex items don't always preserve intrinsic aspect ratios_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/LEbQON">5.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/wBoyry">5.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/LEbQON">5.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/wBoyry">5.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -191,7 +191,7 @@ The [March 2014 spec](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#min-s
 
 > On a flex item whose overflow is not visible, this [auto] keyword specifies as the minimum size the smaller of: (a) the min-content size, or (b) the computed width/height, if that value is definite.
 
-Demo [5.1.a](http://codepen.io/philipwalton/pen/LEbQON) contains an image whose height is 200 pixels and whose width is 500 pixels. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
+Demo [5.1.a](https://codepen.io/philipwalton/pen/LEbQON) contains an image whose height is 200 pixels and whose width is 500 pixels. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
 
 The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has resolved this ambiguity in favor of using sizes that will preserve an element's intrinsic aspect ratio.
 
@@ -214,10 +214,10 @@ _The default `flex` value has changed_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="http://codepen.io/philipwalton/pen/zvvQdB">6.2.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/LppoOj">6.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/zvvQdB">6.2.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/LppoOj">6.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
@@ -257,7 +257,7 @@ This bug can manifest itself in two ways: when not setting any flex values or wh
 
 #### Workaround
 
-If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` value on all of your flex items, or to always use the longhand form (rather than the shorthand) in `flex` declarations to avoid the gotchas shown in the table above. Demo [6.1.a](http://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](http://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
+If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` value on all of your flex items, or to always use the longhand form (rather than the shorthand) in `flex` declarations to avoid the gotchas shown in the table above. Demo [6.1.a](https://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](https://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
 
 
 <!-- To preserve old links -->
@@ -274,9 +274,9 @@ _`flex-basis` doesn't account for `box-sizing:border-box`_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/JoWjyb">7.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/XJMWem">7.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="http://codepen.io/philipwalton/pen/ZYLdqb">7.1.c</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/JoWjyb">7.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/XJMWem">7.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/ZYLdqb">7.1.c</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -284,14 +284,14 @@ _`flex-basis` doesn't account for `box-sizing:border-box`_
 
 An explicit `flex-basis` value (i.e., any value other than `auto`) is supposed to act just like `width` or `height`. It determines the initial size of a flex item and then the other flexibility properties allow it to grow or shrink accordingly.
 
-IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing:border-box`. Demo [7.1.a](http://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
+IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing:border-box`. Demo [7.1.a](https://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
 
 #### Workaround
 
 There are two ways to work around this bug. The first requires no additional markup, but the second is slightly more flexible:
 
-1. Instead of setting an explicit `flex-basis` value, use `auto`, and then set an explicit width or height. Demo [7.1.b](http://codepen.io/philipwalton/pen/XJMWem) shows this.
-2. Use a wrapper element that contains no border or padding so it works with the content box model. Demo [7.1.c](http://codepen.io/philipwalton/pen/ZYLdqb) show this.
+1. Instead of setting an explicit `flex-basis` value, use `auto`, and then set an explicit width or height. Demo [7.1.b](https://codepen.io/philipwalton/pen/XJMWem) shows this.
+2. Use a wrapper element that contains no border or padding so it works with the content box model. Demo [7.1.c](https://codepen.io/philipwalton/pen/ZYLdqb) show this.
 
 
 <!-- To preserve old links -->
@@ -308,29 +308,29 @@ _`flex-basis` doesn't support `calc()`_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/ogBrye">8.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/bNgPKz">8.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/ogBrye">8.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/bNgPKz">8.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/VYJgJo">8.2.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/pvXGmW">8.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/VYJgJo">8.2.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/pvXGmW">8.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
 </table>
 
-IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](http://codepen.io/philipwalton/pen/ogBrye) shows `flex:0 0 calc(100%/3)` not working in IE.
+IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](https://codepen.io/philipwalton/pen/ogBrye) shows `flex:0 0 calc(100%/3)` not working in IE.
 
-In IE 10, `calc()` functions don't even work in longhand `flex-basis` declarations (though this does work in IE 11). Demo [8.2.a](http://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
+In IE 10, `calc()` functions don't even work in longhand `flex-basis` declarations (though this does work in IE 11). Demo [8.2.a](https://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
 
 #### Workaround
 
-Since this bug only affects the `flex` shorthand declaration in IE 11, an easy workaround (if you only need to support IE 11) is to always specify each flexibility property individually. Demo [8.1.b](http://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
+Since this bug only affects the `flex` shorthand declaration in IE 11, an easy workaround (if you only need to support IE 11) is to always specify each flexibility property individually. Demo [8.1.b](https://codepen.io/philipwalton/pen/bNgPKz) offers an example of this.
 
-If you need to support IE 10 as well, then you'll need to fall back to setting `width` or `height` (depending on the container's `flex-direction` property). You can do this by setting a `flex-basis` value of `auto`, which will instruct the browser to use the element's [main size](http://dev.w3.org/csswg/css-flexbox/#box-model) property (i.e., its `width` or `height`). Demo [8.2.b](http://codepen.io/philipwalton/pen/pvXGmW) offers an example of this.
+If you need to support IE 10 as well, then you'll need to fall back to setting `width` or `height` (depending on the container's `flex-direction` property). You can do this by setting a `flex-basis` value of `auto`, which will instruct the browser to use the element's [main size](http://dev.w3.org/csswg/css-flexbox/#box-model) property (i.e., its `width` or `height`). Demo [8.2.b](https://codepen.io/philipwalton/pen/pvXGmW) offers an example of this.
 
 
 <!-- To preserve old links -->
@@ -348,10 +348,10 @@ _Some HTML elements can't be flex containers_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &mdash; <em>workaround</em><br>
-      <a href="http://codepen.io/philipwalton/pen/wKBqdY">9.2.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &mdash; <em>workaround</em><br>
+      <a href="https://codepen.io/philipwalton/pen/wKBqdY">9.2.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
       Chrome<br>
@@ -372,11 +372,11 @@ _Some HTML elements can't be flex containers_
 
 Certain HTML elements, like `<fieldset>` and `<button>`, do not work as flex containers. The browsers default rendering of those element's UI conflicts with the `display: flex` declaration.
 
-Demo [9.1.a](http://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](http://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers.
+Demo [9.1.a](https://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](https://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers.
 
 #### Workaround
 
-The simple solution to this problem is to use a wrapper element that can be a flex container (like a `<div>`) directly inside of the element that can't. Demos [9.1.b](http://codepen.io/philipwalton/pen/mywZpr) and [9.2.b](http://codepen.io/philipwalton/pen/EVaRaX) show workaround for the `<button>` and `<fieldset>` elements, respectively.
+The simple solution to this problem is to use a wrapper element that can be a flex container (like a `<div>`) directly inside of the element that can't. Demos [9.1.b](https://codepen.io/philipwalton/pen/mywZpr) and [9.2.b](https://codepen.io/philipwalton/pen/EVaRaX) show workaround for the `<button>` and `<fieldset>` elements, respectively.
 
 
 <!-- To preserve old links -->
@@ -394,8 +394,8 @@ _`align-items: baseline` doesn't work with nested flex containers_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/vOOejZ">10.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/MwwEVd">10.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/vOOejZ">10.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/MwwEVd">10.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>
       Firefox (fixed in 52)
@@ -406,7 +406,7 @@ _`align-items: baseline` doesn't work with nested flex containers_
   </tr>
 </table>
 
-In Firefox, nested flex containers don't contribute to the baseline that other flex items should align themselves to. Demo [10.1.a](http://codepen.io/philipwalton/pen/vOOejZ) shows the line on the left incorrectly aligning itself to the second line of text on the right. It should be aligned to the first line of text, which is the inner flex container.
+In Firefox, nested flex containers don't contribute to the baseline that other flex items should align themselves to. Demo [10.1.a](https://codepen.io/philipwalton/pen/vOOejZ) shows the line on the left incorrectly aligning itself to the second line of text on the right. It should be aligned to the first line of text, which is the inner flex container.
 
 #### Workaround
 
@@ -428,8 +428,8 @@ _Min and max size declarations are ignored when wrapping flex items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/anon/pen/BNrGwN">11.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/anon/pen/RPMqjz">11.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/anon/pen/BNrGwN">11.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/anon/pen/RPMqjz">11.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Safari (fixed in 10.1)</td>
     <td>
@@ -440,13 +440,13 @@ _Min and max size declarations are ignored when wrapping flex items_
 
 Safari uses min/max width/height declarations for actually rendering the size of flex items, but it ignores those values when calculating how many items should be on a single line of a multi-line flex container. Instead, it simply uses the item's `flex-basis` value, or its width if the flex basis is set to `auto`.
 
-This is problematic when using the `flex: 1` shorthand because that sets the flex basis to `0%`, and an infinite number of flex items could fit on a single line if the browser thinks their widths are all zero. Demo [11.1.a](http://codepen.io/philipwalton/pen/BNrGwN) show an example of this happening.
+This is problematic when using the `flex: 1` shorthand because that sets the flex basis to `0%`, and an infinite number of flex items could fit on a single line if the browser thinks their widths are all zero. Demo [11.1.a](https://codepen.io/philipwalton/pen/BNrGwN) show an example of this happening.
 
 This is also problematic when creating fluid layouts where you want your flex items to be no bigger than X but no smaller than Y. Since Safari ignores those values when determining how many items fit on a line, that strategy won't work.
 
 #### Workaround
 
-The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](http://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
+The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](https://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
 
 
 <!-- To preserve old links -->
@@ -463,8 +463,8 @@ _Inline elements are not treated as flex-items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/qdMgdg">12.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/NqLoNp">12.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/qdMgdg">12.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/NqLoNp">12.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -474,7 +474,7 @@ Inline elements, including `::before` and `::after` pseudo-elements, are not tre
 
 #### Workaround
 
-This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](http://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
+This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](https://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
 
 
 <!-- To preserve old links -->
@@ -491,18 +491,18 @@ _Importance is ignored on flex-basis when using flex shorthand_
   </tr>
   <tr valign="top">
     <td>
-      <a href="http://codepen.io/philipwalton/pen/ZbRoYw">13.1.a</a> &mdash; <em>bug</em><br>
-      <a href="http://codepen.io/philipwalton/pen/rOKvNb">13.1.b</a> &mdash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/ZbRoYw">13.1.a</a> &mdash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/rOKvNb">13.1.b</a> &mdash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
 </table>
 
-When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!important` to the `flex-grow` and `flex-shrink` parts but not to the `flex-basis` part. Demo [13.1.a](http://codepen.io/philipwalton/pen/ZbRoYw) shows an example of a declaration with `!important` not overriding another declaration in IE 10.
+When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!important` to the `flex-grow` and `flex-shrink` parts but not to the `flex-basis` part. Demo [13.1.a](https://codepen.io/philipwalton/pen/ZbRoYw) shows an example of a declaration with `!important` not overriding another declaration in IE 10.
 
 #### Workaround
 
-If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](http://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
+If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](https://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
 
 
 <!-- To preserve old links -->
