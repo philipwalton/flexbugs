@@ -21,6 +21,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 12. [Inline elements are not treated as flex-items](#flexbug-12)
 13. [Importance is ignored on flex-basis when using flex shorthand](#flexbug-13)
 14. [Shrink-to-fit containers with `flex-flow: column wrap` do not contain their items](#flexbug-14)
+14. [`margin-auto` is ignored in the cross direction of `flex-direction: column`](#flexbug-15)
 
 
 <!-- To preserve old links -->
@@ -547,6 +548,39 @@ When using `flex-flow: column wrap`, some browsers do not properly size the cont
 If your container has a fixed height (usually the case when you enable wrapping), you avoid this bug by using `flex-flow: row wrap` (note `row` instead of `column`) and fake the column behavior by updating the container's [writing mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) (and reseting it on the items). Demo [14.1.b](https://codepen.io/philipwalton/pen/RjvQgx) shows an example of this working in all modern browsers.
 
 **Note:** To use this workaround in Safari 10 you may need to set explicit dimensions on the flex items. Demo [14.1.c](https://codepen.io/philipwalton/pen/MOxQBg) shows an example of how this can be needed in Safari 10.
+
+
+### Flexbug #15
+
+_`margin-auto` is ignored in the cross direction of `flex-direction: column`_
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking Bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="https://codepen.io/anon/pen/aVvxRV">15.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/anon/pen/bYZxWg">15.1.b</a> &ndash; <em>workaround</em>
+    </td>
+    <td>
+        Internet Explorer 10-11 (fixed in Edge)
+    </td>
+    <td>
+        <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/14593426/">IE #14593426</a>
+    </td>
+  </tr>
+</table>
+
+Within flex columns in IE 10-11, flex items do not respect margins in the cross direction. That means IE11 stretches items horizontally to fill the container, while Chrome and Firefox correctly apply margins that fill the space around item. Demo [15.1.a](https://codepen.io/anon/pen/aVvxRV) shows an example of this.
+
+The [specification (§8.3)](https://drafts.csswg.org/css-flexbox-1/#propdef-align-items) states that the default value of `align-items` is `stretch`, so the centering in Chrome and Firefox is the result of correct centerings by margins in a flex context.
+
+#### Workaround
+
+Set `align-items: center` on the flex container. Demo [15.1.b](https://codepen.io/anon/pen/bYZxWg) shows an example of that. If any of the items should stretch to full width, set `width: 100%` on these items.
 
 
 ## Acknowledgments
