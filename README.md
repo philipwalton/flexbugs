@@ -47,13 +47,15 @@ _Minimum content sizing of flex items not honored_
       <a href="https://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
-      Chrome (fixed in 48)<br>
-      Opera (fixed in 35)<br>
+      Chrome (partially fixed in 44)<br>
+      Opera (partially fixed in 31)<br>
       Safari (fixed in 10)
     </td>
     <td>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898</a><br>
-      <a href="https://bugs.webkit.org/show_bug.cgi?id=146020">Safari #146020</a>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898 (fixed)</a><br>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=676985">Chrome #676985</a><br>
+      <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=596743">Chrome #596743</a></br>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=146020">Safari #146020 (fixed)</a>
     </td>
   </tr>
 </table>
