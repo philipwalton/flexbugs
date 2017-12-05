@@ -21,7 +21,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 12. [Inline elements are not treated as flex-items](#flexbug-12)
 13. [Importance is ignored on flex-basis when using flex shorthand](#flexbug-13)
 14. [Shrink-to-fit containers with `flex-flow: column wrap` do not contain their items](#flexbug-14)
-14. [`margin-auto` is ignored in the cross direction of `flex-direction: column`](#flexbug-15)
+15. [Column flex items ignore `margin: auto` on the cross axis](#flexbug-15)
 
 
 <!-- To preserve old links -->
@@ -552,7 +552,7 @@ If your container has a fixed height (usually the case when you enable wrapping)
 
 ### Flexbug #15
 
-_`margin-auto` is ignored in the cross direction of `flex-direction: column`_
+_Column flex items ignore `margin-auto` on the cross axis_
 
 <table>
   <tr>
@@ -562,8 +562,8 @@ _`margin-auto` is ignored in the cross direction of `flex-direction: column`_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/anon/pen/aVvxRV">15.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/anon/pen/bYZxWg">15.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/RjdvWK">15.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/BmbMPP">15.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
         Internet Explorer 10-11 (fixed in Edge)
@@ -574,13 +574,13 @@ _`margin-auto` is ignored in the cross direction of `flex-direction: column`_
   </tr>
 </table>
 
-Within flex columns in IE 10-11, flex items do not respect margins in the cross direction. That means IE11 stretches items horizontally to fill the container, while Chrome and Firefox correctly apply margins that fill the space around item. Demo [15.1.a](https://codepen.io/anon/pen/aVvxRV) shows an example of this.
+`margin: auto` can be used to fill all the available space between flex items (and is useful for centering), but in IE 10-11 this doesn't work in the cross axis for flex items within a column container.
 
-The [specification (§8.3)](https://drafts.csswg.org/css-flexbox-1/#propdef-align-items) states that the default value of `align-items` is `stretch`, so the centering in Chrome and Firefox is the result of correct centerings by margins in a flex context.
+Instead of filling the available space, items render according to their `align-self` property, which defaults to `stretch`. Demo [15.1.a](https://codepen.io/philipwalton/pen/RjdvWK) shows an example of this.
 
 #### Workaround
 
-Set `align-items: center` on the flex container. Demo [15.1.b](https://codepen.io/anon/pen/bYZxWg) shows an example of that. If any of the items should stretch to full width, set `width: 100%` on these items.
+If you're using `margin: auto` to center items, you can achieve the same effect by setting `align-self: center` on each item with `margin: auto` (or `align-items: center` on the container). Demo [15.1.b](https://codepen.io/philipwalton/pen/BmbMPP) shows this working in IE 10-11.
 
 
 ## Acknowledgments
