@@ -23,7 +23,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 14. [Shrink-to-fit containers with `flex-flow: column wrap` do not contain their items](#flexbug-14)
 15. [Column flex items ignore `margin: auto` on the cross axis](#flexbug-15)
 16. [`flex-basis` cannot be animated](#flexbug-16)
-
+17. [Flex items are not correctly justified when `max-width` is used](#flexbug-17)
 
 
 <!-- To preserve old links -->
@@ -614,6 +614,51 @@ In Safari, CSS animations involving the `flex-basis` property are ignored. Demo 
 #### Workaround
 
 Since the `flex-basis` property is effectively just a substitute for the container's size property along the main axis (`width` for rows and `height` for columns), you can achieve the affect of animating `flex-basis` by using a `flex-basis` value of `auto` and instead animating either the `width` or `height` instead. Demo [16.1.b](https://codepen.io/philipwalton/pen/MORPjP) shows how you can achieve the same affect from demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) by animating `width` instead of `flex-basis`.
+
+
+### Flexbug #17
+
+_Flex items are not correctly justified when `max-width` is used_
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="https://codepen.io/philipwalton/pen/vWMbgK">17.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/OOGdmj">17.1.b</a> &ndash; <em>workaround</em>
+    </td>
+    <td>
+        Internet Explorer 10-11
+    </td>
+  </tr>
+</table>
+
+In IE 10-11 the free space between or around flex items (as per their container's `justify-content` property) is not correctly calculated if `max-width` is used. Demo [17.1.a](https://codepen.io/philipwalton/pen/vWMbgK) shows an example of this.
+
+#### Workaround
+
+In most cases where `max-width` is applied to a flex item, the desired result is to have that item start at the `flex-basis` value and grow to no larger than then `max-width` value.
+
+In these cases, the same effect can be achieved by setting the desired `max-width` as the item's `flex-basis` and then letting it shrink by setting `min-width` to what `flex-basis` was previously set to.
+
+In other words, the following two declarations will both render an item with a final width between `0%` and `25%` depending on the available free space:
+
+```css
+.using-a-grow-strategy {
+  flex: 1 0 0%;
+  max-width: 25%;
+}
+
+.using-a-shrink-strategy {
+  flex: 0 1 25%;
+  min-width: 0%;
+}
+```
+
+Demo [17.1.b](https://codepen.io/philipwalton/pen/OOGdmj) shows this working in IE 10-11.
 
 
 ## Acknowledgments
