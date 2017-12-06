@@ -47,8 +47,8 @@ _Minimum content sizing of flex items not honored_
       <a href="https://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
-      Chrome (fixed in 44)<br>
-      Opera (fixed in 31)<br>
+      Chrome (fixed in 48)<br>
+      Opera (fixed in 35)<br>
       Safari (fixed in 10)
     </td>
     <td>
