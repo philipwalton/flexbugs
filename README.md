@@ -8,12 +8,12 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 ## The bugs and their workarounds
 
 1. [Minimum content sizing of flex items not honored](#flexbug-1)
-2. [Column flex items set to `align-items:center` overflow their container](#flexbug-2)
+2. [Column flex items set to `align-items: center` overflow their container](#flexbug-2)
 3. [`min-height` on a flex container won't apply to its flex items](#flexbug-3)
 4. [`flex` shorthand declarations with unitless `flex-basis` values are ignored](#flexbug-4)
 5. [Column flex items don't always preserve intrinsic aspect ratios](#flexbug-5)
 6. [The default `flex` value has changed](#flexbug-6)
-7. [`flex-basis` doesn't account for `box-sizing:border-box`](#flexbug-7)
+7. [`flex-basis` doesn't account for `box-sizing: border-box`](#flexbug-7)
 8. [`flex-basis` doesn't support `calc()`](#flexbug-8)
 9. [Some HTML elements can't be flex containers](#flexbug-9)
 10. [`align-items: baseline` doesn't work with nested flex containers](#flexbug-10)
@@ -74,7 +74,7 @@ The flexbox spec defines an initial `flex-shrink` value of `1` but says items sh
 
 ### Flexbug #2
 
-_Column flex items set to `align-items:center` overflow their container_
+_Column flex items set to `align-items: center` overflow their container_
 
 <table>
   <tr>
@@ -92,11 +92,11 @@ _Column flex items set to `align-items:center` overflow their container_
   </tr>
 </table>
 
-When using `align-items:center` on a flex container in the column direction, the contents of flex item, if too big, will overflow their container in IE 10-11.
+When using `align-items: center` on a flex container in the column direction, the contents of flex item, if too big, will overflow their container in IE 10-11.
 
 #### Workaround
 
-Most of the time, this can be fixed by simply setting `max-width:100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing:border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
+Most of the time, this can be fixed by simply setting `max-width: 100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing: border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
 
 
 <!-- To preserve old links -->
@@ -268,7 +268,7 @@ If you have to support IE 10, the best solution is to *always* set an explicit `
 
 ### Flexbug #7
 
-_`flex-basis` doesn't account for `box-sizing:border-box`_
+_`flex-basis` doesn't account for `box-sizing: border-box`_
 
 <table>
   <tr>
@@ -287,7 +287,7 @@ _`flex-basis` doesn't account for `box-sizing:border-box`_
 
 An explicit `flex-basis` value (i.e., any value other than `auto`) is supposed to act just like `width` or `height`. It determines the initial size of a flex item and then the other flexibility properties allow it to grow or shrink accordingly.
 
-IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing:border-box`. Demo [7.1.a](https://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
+IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing: border-box`. Demo [7.1.a](https://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
 
 #### Workaround
 
@@ -325,7 +325,7 @@ _`flex-basis` doesn't support `calc()`_
   </tr>
 </table>
 
-IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](https://codepen.io/philipwalton/pen/ogBrye) shows `flex:0 0 calc(100%/3)` not working in IE.
+IE 10-11 ignore `calc()` functions used in `flex` shorthand declarations. Demo [8.1.a](https://codepen.io/philipwalton/pen/ogBrye) shows `flex: 0 0 calc(100%/3)` not working in IE.
 
 In IE 10, `calc()` functions don't even work in longhand `flex-basis` declarations (though this does work in IE 11). Demo [8.2.a](https://codepen.io/philipwalton/pen/VYJgJo) shows `flex-basis: calc(100%/3)` not working in IE 10.
 
