@@ -361,22 +361,24 @@ _Some HTML elements can't be flex containers_
     <td>
       Chrome<br>
       Edge<br>
-      Firefox (fixed in 52)<br>
+      Firefox (partially fixed in 52)<br>
       Opera<br>
       Safari (fixed in 11)
     </td>
     <td>
       <a href="https://code.google.com/p/chromium/issues/detail?id=375693">Chrome #375693</a><br>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=700029">Chrome #700029</a><br>
       <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1397768">Firefox #1397768</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=169082">Safari #169082 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=169700">Safari #169700 (fixed)</a>
     </td>
   </tr>
 </table>
 
-Certain HTML elements, like `<fieldset>` and `<button>`, do not work as flex containers. The browsers default rendering of those element's UI conflicts with the `display: flex` declaration.
+Certain HTML elements, like `<fieldset>` and `<button>`, do not work as flex containers. The browser's default rendering of those element's UI conflicts with the `display: flex` declaration.
 
 Demo [9.1.a](https://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](https://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers.
 
