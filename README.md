@@ -22,6 +22,8 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 13. [Importance is ignored on flex-basis when using flex shorthand](#flexbug-13)
 14. [Shrink-to-fit containers with `flex-flow: column wrap` do not contain their items](#flexbug-14)
 15. [Column flex items ignore `margin: auto` on the cross axis](#flexbug-15)
+16. [`flex-basis` cannot be animated](#flexbug-16)
+
 
 
 <!-- To preserve old links -->
@@ -581,6 +583,37 @@ Instead of filling the available space, items render according to their `align-s
 #### Workaround
 
 If you're using `margin: auto` to center items, you can achieve the same effect by setting `align-self: center` on each item with `margin: auto` (or `align-items: center` on the container). Demo [15.1.b](https://codepen.io/philipwalton/pen/BmbMPP) shows this working in IE 10-11.
+
+
+### Flexbug #16
+
+_`flex-basis` cannot be animated_
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+    <th align="left">Tracking Bugs</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="https://codepen.io/philipwalton/pen/yPrRax">16.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/philipwalton/pen/MORPjP">16.1.b</a> &ndash; <em>workaround</em>
+    </td>
+    <td>
+        Safari
+    </td>
+    <td>
+        <a href="https://bugs.webkit.org/show_bug.cgi?id=180435">Safari #180435</a>
+    </td>
+  </tr>
+</table>
+
+In Safari, CSS animations involving the `flex-basis` property are ignored. Demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) shows an example of this.
+
+#### Workaround
+
+Since the `flex-basis` property is effectively just a substitute for the container's size property along the main axis (`width` for rows and `height` for columns), you can achieve the affect of animating `flex-basis` by using a `flex-basis` value of `auto` and instead animating either the `width` or `height` instead. Demo [16.1.b](https://codepen.io/philipwalton/pen/MORPjP) shows how you can achieve the same affect from demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) by animating `width` instead of `flex-basis`.
 
 
 ## Acknowledgments
