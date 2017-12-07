@@ -636,20 +636,20 @@ _Flex items are not correctly justified when `max-width` is used_
       <a href="https://codepen.io/philipwalton/pen/OOGdmj">17.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
-        Internet Explorer 10-11
+        Internet Explorer 11
     </td>
   </tr>
 </table>
 
-In IE 10-11 the free space between or around flex items (as per their container's `justify-content` property) is not correctly calculated if `max-width` is used. Demo [17.1.a](https://codepen.io/philipwalton/pen/vWMbgK) shows an example of this.
+In IE 11 the free space between or around flex items (as per their container's `justify-content` property) is not correctly calculated if a max-size property is used (`max-width` in the row direction, `max-height` in the column direction). Demo [17.1.a](https://codepen.io/philipwalton/pen/vWMbgK) shows an example of this.
 
 #### Workaround
 
-In most cases where `max-width` is applied to a flex item, the desired result is to have that item start at the `flex-basis` value and grow to no larger than then `max-width` value.
+In most cases where a max-size property is used on a flex item, the desired result is to have that item's initial size start at the value of the `flex-basis` property and grow to no larger than its max-size value.
 
-In these cases, the same effect can be achieved by setting the desired `max-width` as the item's `flex-basis` and then letting it shrink by setting `min-width` to what `flex-basis` was previously set to.
+In such cases, the same effect can be achieved by initially specifying the desired max-size as the item's `flex-basis` and then letting it shrink by setting the min-size property (`min-width` in the row direction, `min-height` in the column direction) to whatever `flex-basis` was previously set to.
 
-In other words, the following two declarations will both render an item with a final width between `0%` and `25%` depending on the available free space:
+In other words, the following two declarations will both render an item with a final size between `0%` and `25%` depending on the available free space:
 
 ```css
 .using-a-grow-strategy {
@@ -663,7 +663,7 @@ In other words, the following two declarations will both render an item with a f
 }
 ```
 
-Demo [17.1.b](https://codepen.io/philipwalton/pen/OOGdmj) shows this working in IE 10-11.
+Demo [17.1.b](https://codepen.io/philipwalton/pen/OOGdmj) shows this working in IE 11.
 
 
 ## Acknowledgments
