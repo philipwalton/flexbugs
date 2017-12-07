@@ -606,6 +606,7 @@ _`flex-basis` cannot be animated_
       <a href="https://codepen.io/philipwalton/pen/MORPjP">16.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
+        Internet Explorer 10-11<br>
         Safari
     </td>
     <td>
@@ -614,7 +615,7 @@ _`flex-basis` cannot be animated_
   </tr>
 </table>
 
-In Safari, CSS animations involving the `flex-basis` property are ignored. Demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) shows an example of this.
+In some browsers, CSS animations involving the `flex-basis` property are ignored. Demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) shows an example of this.
 
 #### Workaround
 
