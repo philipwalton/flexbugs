@@ -24,7 +24,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 15. [Column flex items ignore `margin: auto` on the cross axis](#flexbug-15)
 16. [`flex-basis` cannot be animated](#flexbug-16)
 17. [Flex items are not correctly justified when `max-width` is used](#flexbug-17)
-
+18. [Dynamically changing `flex-grow` doesn't update Safari if there is no available space](#flexbug-18)
 
 <!-- To preserve old links -->
 <a name="1-minimum-content-sizing-of-flex-items-not-honored"><a>
@@ -666,6 +666,32 @@ In other words, the following two declarations will both render an item with a f
 
 Demo [17.1.b](https://codepen.io/philipwalton/pen/OOGdmj) shows this working in IE 11.
 
+
+### Flexbug 18
+
+_Dynamically changing `flex-grow` doesn't update Safari if there is no available space_
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="https://codepen.io/alexstacey/pen/gepJwL"> 18.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://codepen.io/alexstacey/pen/vROqBZ">18.1.b</a> &ndash; <em>workaround</em>
+    </td>
+    <td>
+        Safari 10
+    </td>
+  </tr>
+</table>
+
+In Safari 10 (and possibly other recent Safari versions) dynamically changing the `flex-grow` property of an element from 0 to > 0 only has an effect on the display if there is available space in the parent element to fill. If there is no space, the change has no effect. Demo [18.1.a](https://codepen.io/alexstacey/pen/gepJwL) shows an example of this.
+
+#### Workaround
+
+You can work around this in JS by storing the `flex-grow` values of all of the flexbox items in the group, then setting them all to 0 which frees up some available space, then resetting them to their values after a short pause which causes Safari to recalculate the space distributions. A 10ms pause seems to do the trick - though you might want to try different values. There is a slight visible glitch, but it fixes the bug.
 
 ## Acknowledgments
 
