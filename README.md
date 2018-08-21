@@ -361,7 +361,7 @@ _Some HTML elements can't be flex containers_
     <td>
       Chrome<br>
       Edge<br>
-      Firefox (partially fixed in 52)<br>
+      Firefox (partially fixed in 52, fixed in 63)<br>
       Opera<br>
       Safari (fixed in 11)
     </td>
@@ -371,7 +371,7 @@ _Some HTML elements can't be flex containers_
       <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
-      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1397768">Firefox #1397768</a><br>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1397768">Firefox #1397768 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=169082">Safari #169082 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=169700">Safari #169700 (fixed)</a>
     </td>
