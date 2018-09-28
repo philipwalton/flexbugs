@@ -356,7 +356,8 @@ _Some HTML elements can't be flex containers_
       <a href="https://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &ndash; <em>bug</em><br>
       <a href="https://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &ndash; <em>workaround</em><br>
       <a href="https://codepen.io/philipwalton/pen/wKBqdY">9.2.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &ndash; <em>workaround</em>
+      <a href="https://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://codepen.io/paulirish/pen/OBJXWq">9.3.a</a> &ndash; <em>bug</em><br>
     </td>
     <td>
       Chrome<br>
@@ -373,14 +374,15 @@ _Some HTML elements can't be flex containers_
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1397768">Firefox #1397768</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=169082">Safari #169082 (fixed)</a><br>
-      <a href="https://bugs.webkit.org/show_bug.cgi?id=169700">Safari #169700 (fixed)</a>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=169700">Safari #169700 (fixed)</a><br>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=190065">Safari #190065</a>
     </td>
   </tr>
 </table>
 
-Certain HTML elements, like `<fieldset>` and `<button>`, do not work as flex containers. The browser's default rendering of those element's UI conflicts with the `display: flex` declaration.
+Certain HTML elements, like `<summary>`, `<fieldset>` and `<button>`, do not work as flex containers. The browser's default rendering of those element's UI conflicts with the `display: flex` declaration.
 
-Demo [9.1.a](https://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](https://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers.
+Demo [9.1.a](https://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](https://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers. Demo [9.3.a](https://codepen.io/paulirish/pen/OBJXWq) shows that `<summary>` elements dont work in Safari.
 
 #### Workaround
 
