@@ -561,7 +561,7 @@ If your container has a fixed height (usually the case when you enable wrapping)
 
 ### Flexbug #15
 
-_Column flex items ignore `margin-auto` on the cross axis_
+_Column flex items ignore `margin: auto` on the cross axis_
 
 <table>
   <tr>
