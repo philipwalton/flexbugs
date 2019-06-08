@@ -361,7 +361,7 @@ _Some HTML elements can't be flex containers_
     <td>
       Chrome<br>
       Edge<br>
-      Firefox (partially fixed in 52, fixed in 63)<br>
+      Firefox (fixed in 63)<br>
       Opera<br>
       Safari (fixed in 11)
     </td>
