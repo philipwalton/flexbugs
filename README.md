@@ -48,7 +48,7 @@ _Minimum content sizing of flex items not honored_
     </td>
     <td>
       Chrome (fixed in 72)<br>
-      Opera (partially fixed in 31)<br>
+      Opera (fixed in 60)<br>
       Safari (fixed in 10)
     </td>
     <td>
