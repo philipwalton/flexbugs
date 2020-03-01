@@ -86,11 +86,13 @@ _Column flex items set to `align-items: center` overflow their container_
     <td>
       2.1.a <em>bug</em> &ndash;
       <a href="https://codepen.io/philipwalton/pen/xbRpMe">codepen</a> |
-      <a href="docs/2.1.a-bug.html">gh-pages</a>
+      <a href="https://akaustav.github.io/flexbugs/2.1.a-bug.html">gh-pages</a> |
+      <a href="docs/2.1.a-bug.html">source</a>
       <br>
       2.1.b <em>workaround</em> &ndash;
       <a href="https://codepen.io/philipwalton/pen/ogYpVv">codepen</a> |
-      <a href="docs/2.1.b-workaround.html">gh-pages</a>
+      <a href="https://akaustav.github.io/flexbugs/2.1.b-workaround.html">gh-pages</a> |
+      <a href="docs/2.1.b-workaround.html">source</a>
     </td>
     <td>
       Internet Explorer 10-11 (fixed in Edge)
