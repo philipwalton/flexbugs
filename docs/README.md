@@ -1,3 +1,5 @@
-This folder primarily houses static html files containing bug examples and their corresponding fixes that are hosted on GitHub pages [here](https://akaustav.github.io/flexbugs/docs). You can view their source code here. Note that any links are relative to their destination in the hosted site and won't work from here.
+## Flexbugs Static Files
 
-Refer the complete list of bugs and their workarounds [here](https://github.com/akaustav/flexbugs#the-bugs-and-their-workarounds).
+This folder primarily houses static html files containing [bugs and their workarounds](https://github.com/akaustav/flexbugs#the-bugs-and-their-workarounds) for hosting on GitHub pages. You can view their source code in this folder [here](https://github.com/akaustav/flexbugs/tree/master/docs).
+
+In order to ensure that the original documentation stays on GitHub [README](https://github.com/akaustav/flexbugs#flexbugs) (and not on GitHub pages), absolute links have been used (instead of relative links) wherver applicable.
