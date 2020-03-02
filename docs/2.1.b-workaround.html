@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html translate="no">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Flexbug 2.1.b (workaround)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flexbug 2.1.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
     <style>
       /**
        * Flexbug demo 2.1.b (workaround)
@@ -16,11 +17,16 @@
        */
 
       .FlexContainer {
+        -webkit-box-align: center;
         align-items: center;
         background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
         display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
         flex-direction: column;
         height: 200px;
+        -webkit-box-pack: center;
         justify-content: center;
         margin: 1em;
         padding: 2em;
@@ -36,7 +42,7 @@
       }
     </style>
   </head>
-  <body>
+  <body translate="no">
     <div class="FlexContainer">
       <div class="FlexItem">
         The contents inside of this box are overflowing their container.
