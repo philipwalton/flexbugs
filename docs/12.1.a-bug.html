@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 12.1.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 12.1.a (bug)
+       */
+
+      .FlexContainer {
+        background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 1em;
+        padding: 1em;
+      }
+
+      .FlexContainer::before {
+        content: '::before item';
+      }
+
+      .FlexContainer::before,
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        margin: 1em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <span class="FlexItem">Span item</span>
+      <div class="FlexItem">Div item</div>
+    </div>
+  </body>
+</html>
