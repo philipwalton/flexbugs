@@ -84,8 +84,7 @@ _Column flex items set to `align-items: center` overflow their container_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://akaustav.github.io/flexbugs/2.1.a-bug.html">2.1.a</a> &ndash; <em>bug</em>
-      <br>
+      <a href="https://akaustav.github.io/flexbugs/2.1.a-bug.html">2.1.a</a> &ndash; <em>bug</em><br>
       <a href="https://akaustav.github.io/flexbugs/2.1.b-workaround.html">2.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
