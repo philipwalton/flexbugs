@@ -403,8 +403,8 @@ _`align-items: baseline` doesn't work with nested flex containers_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/vOOejZ">10.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/MwwEVd">10.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/10.1.a-bug.html">10.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/10.1.b-workaround.html">10.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
       Firefox (fixed in 52)
@@ -415,7 +415,7 @@ _`align-items: baseline` doesn't work with nested flex containers_
   </tr>
 </table>
 
-In Firefox, nested flex containers don't contribute to the baseline that other flex items should align themselves to. Demo [10.1.a](https://codepen.io/philipwalton/pen/vOOejZ) shows the line on the left incorrectly aligning itself to the second line of text on the right. It should be aligned to the first line of text, which is the inner flex container.
+In Firefox, nested flex containers don't contribute to the baseline that other flex items should align themselves to. Demo [10.1.a](https://akaustav.github.io/flexbugs/10.1.a-bug.html) shows the line on the left incorrectly aligning itself to the second line of text on the right. It should be aligned to the first line of text, which is the inner flex container.
 
 #### Workaround
 
