@@ -41,10 +41,10 @@ _Minimum content sizing of flex items not honored_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/MYbrrr">1.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ByQJOQ">1.1.b</a> &ndash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ByQJqQ">1.2.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/wBopYg">1.2.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/1.1.a-bug.html">1.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/1.1.b-workaround.html">1.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://akaustav.github.io/flexbugs/1.2.a-bug.html">1.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/1.2.b-workaround.html">1.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
       Chrome (fixed in 72)<br>
