@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 5.1.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 5.1.a (bug)
+       */
+
+      .FlexContainer {
+        background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: 300px;
+        margin: 1em;
+        width: 300px;
+      }
+
+      .FlexItem {
+        height: auto;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <img class="FlexItem" src="http://placehold.it/800x200/333" />
+    </div>
+  </body>
+</html>

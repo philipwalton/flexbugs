@@ -184,8 +184,8 @@ _Column flex items don't always preserve intrinsic aspect ratios_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/LEbQON">5.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/wBoyry">5.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/5.1.a-bug.html">5.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/5.1.b-workaround.html">5.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -195,7 +195,7 @@ The [March 2014 spec](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#min-s
 
 > On a flex item whose overflow is not visible, this [auto] keyword specifies as the minimum size the smaller of: (a) the min-content size, or (b) the computed width/height, if that value is definite.
 
-Demo [5.1.a](https://codepen.io/philipwalton/pen/LEbQON) contains an image whose height is 200 pixels and whose width is 500 pixels. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
+Demo [5.1.a](https://akaustav.github.io/flexbugs/5.1.a-bug.html) contains an image whose height is 200 pixels and whose width is 500 pixels. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
 
 The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has resolved this ambiguity in favor of using sizes that will preserve an element's intrinsic aspect ratio.
 
