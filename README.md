@@ -437,8 +437,8 @@ _Min and max size declarations are ignored when wrapping flex items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/anon/pen/BNrGwN">11.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/anon/pen/RPMqjz">11.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/11.1.a-bug.html">11.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/11.1.b-workaround.html">11.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Safari (fixed in 10.1)</td>
     <td>
@@ -449,13 +449,13 @@ _Min and max size declarations are ignored when wrapping flex items_
 
 Safari uses min/max width/height declarations for actually rendering the size of flex items, but it ignores those values when calculating how many items should be on a single line of a multi-line flex container. Instead, it simply uses the item's `flex-basis` value, or its width if the flex basis is set to `auto`.
 
-This is problematic when using the `flex: 1` shorthand because that sets the flex basis to `0%`, and an infinite number of flex items could fit on a single line if the browser thinks their widths are all zero. Demo [11.1.a](https://codepen.io/philipwalton/pen/BNrGwN) show an example of this happening.
+This is problematic when using the `flex: 1` shorthand because that sets the flex basis to `0%`, and an infinite number of flex items could fit on a single line if the browser thinks their widths are all zero. Demo [11.1.a](https://akaustav.github.io/flexbugs/11.1.a-bug.html) show an example of this happening.
 
 This is also problematic when creating fluid layouts where you want your flex items to be no bigger than X but no smaller than Y. Since Safari ignores those values when determining how many items fit on a line, that strategy won't work.
 
 #### Workaround
 
-The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](https://codepen.io/philipwalton/pen/RPMqjz) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
+The only way to avoid this issue is to make sure to set the flex basis to a value that is always going to be between (inclusively) the min and max size declarations. If using either a min or a max size declaration, set the flex basis to whatever that value is, if you're using both a min *and* a max size declaration, set the flex basis to a value that is somewhere in that range. This sometimes requires using percentage values or media queries to cover all possible scenarios. Demo [11.1.b](https://akaustav.github.io/flexbugs/11.1.b-workaround.html) shows an example of setting the flex basis to the same value as the min width to workaround this bug in Safari.
 
 
 <!-- To preserve old links -->

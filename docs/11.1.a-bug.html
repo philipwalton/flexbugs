@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 11.1.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 11.1.a (bug)
+       */
+
+      .FlexContainer {
+        background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin: 1em;
+        padding: 1em;
+        width: 600px;
+      }
+
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        margin: 1em;
+        min-width: 200px;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <div class="FlexItem">Item 1</div>
+      <div class="FlexItem">Item 2</div>
+      <div class="FlexItem">Item 3</div>
+      <div class="FlexItem">Item 4</div>
+      <div class="FlexItem">Item 5</div>
+      <div class="FlexItem">Item 6</div>
+    </div>
+  </body>
+</html>
