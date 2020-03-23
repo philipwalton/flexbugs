@@ -500,18 +500,18 @@ _Importance is ignored on flex-basis when using flex shorthand_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/ZbRoYw">13.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/rOKvNb">13.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/13.1.a-bug.html">13.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/13.1.b-workaround.html">13.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
 </table>
 
-When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!important` to the `flex-grow` and `flex-shrink` parts but not to the `flex-basis` part. Demo [13.1.a](https://codepen.io/philipwalton/pen/ZbRoYw) shows an example of a declaration with `!important` not overriding another declaration in IE 10.
+When applying `!important` to a `flex` shorthand declaration, IE 10 applies `!important` to the `flex-grow` and `flex-shrink` parts but not to the `flex-basis` part. Demo [13.1.a](https://akaustav.github.io/flexbugs/13.1.a-bug.html) shows an example of a declaration with `!important` not overriding another declaration in IE 10.
 
 #### Workaround
 
-If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](https://codepen.io/philipwalton/pen/rOKvNb) shows an example of this working in IE 10.
+If you need the `flex-basis` part of your `flex` declaration to be `!important` and you have to support IE 10, make sure to include a `flex-basis` declaration separately. Demo [13.1.b](https://akaustav.github.io/flexbugs/13.1.b-workaround.html) shows an example of this working in IE 10.
 
 
 <!-- To preserve old links -->
