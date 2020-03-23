@@ -484,7 +484,7 @@ Inline elements, including `::before` and `::after` pseudo-elements, are not tre
 
 #### Workaround
 
-This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](https://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
+This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](https://akaustav.github.io/flexbugs/12.1.b-workaround.html) shows an example of this working in IE 10-11.
 
 
 <!-- To preserve old links -->
