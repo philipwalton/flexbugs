@@ -634,8 +634,8 @@ _Flex items are not correctly justified when `max-width` is used_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/vWMbgK">17.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/OOGdmj">17.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/17.1.a-bug.html">17.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/17.1.b-workaround.html">17.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
         Internet Explorer 11
@@ -643,7 +643,7 @@ _Flex items are not correctly justified when `max-width` is used_
   </tr>
 </table>
 
-In IE 11 the free space between or around flex items (as per their container's `justify-content` property) is not correctly calculated if a max-size property is used (`max-width` in the row direction, `max-height` in the column direction). Demo [17.1.a](https://codepen.io/philipwalton/pen/vWMbgK) shows an example of this.
+In IE 11 the free space between or around flex items (as per their container's `justify-content` property) is not correctly calculated if a max-size property is used (`max-width` in the row direction, `max-height` in the column direction). Demo [17.1.a](https://akaustav.github.io/flexbugs/17.1.a-bug.html) shows an example of this.
 
 #### Workaround
 
@@ -665,7 +665,7 @@ In other words, the following two declarations will both render an item with a f
 }
 ```
 
-Demo [17.1.b](https://codepen.io/philipwalton/pen/OOGdmj) shows this working in IE 11.
+Demo [17.1.b](https://akaustav.github.io/flexbugs/17.1.b-workaround.html) shows this working in IE 11.
 
 
 ## Acknowledgments

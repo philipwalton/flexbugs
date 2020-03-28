@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 17.1.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 17.1.a (bug)
+       */
+
+      .FlexContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .FlexContainer--itemsCentered {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .FlexContainer--itemsSpaced {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+
+      .FlexItem {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 0%;
+        flex: 1 0 0%;
+        max-width: 25%;
+      }
+
+      /* Presentational styles */
+      /* not demo related      */
+
+      .FlexContainer,
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+      }
+      .FlexContainer {
+        margin: 1em;
+        padding: 0.5em;
+      }
+      .FlexItem {
+        margin: 0.5em;
+        padding: 1em;
+      }
+      .FlexItem:last-child {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer FlexContainer--itemsCentered">
+      <div class="FlexItem">
+        We should be&hellip;
+      </div>
+      <div class="FlexItem">
+        &hellip;centered
+      </div>
+    </div>
+
+    <div class="FlexContainer FlexContainer--itemsSpaced">
+      <div class="FlexItem">
+        We should have&hellip;
+      </div>
+      <div class="FlexItem">
+        &hellip;space bewteen us
+      </div>
+    </div>
+  </body>
+</html>
