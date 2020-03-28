@@ -570,8 +570,8 @@ _Column flex items ignore `margin: auto` on the cross axis_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/RjdvWK">15.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/BmbMPP">15.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/15.1.a-bug.html">15.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/15.1.b-workaround.html">15.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
         Internet Explorer 10-11 (fixed in Edge)
@@ -584,11 +584,11 @@ _Column flex items ignore `margin: auto` on the cross axis_
 
 `margin: auto` can be used to fill all the available space between flex items (and is useful for centering), but in IE 10-11 this doesn't work in the cross axis for flex items within a column container.
 
-Instead of filling the available space, items render according to their `align-self` property, which defaults to `stretch`. Demo [15.1.a](https://codepen.io/philipwalton/pen/RjdvWK) shows an example of this.
+Instead of filling the available space, items render according to their `align-self` property, which defaults to `stretch`. Demo [15.1.a](https://akaustav.github.io/flexbugs/15.1.a-bug.html) shows an example of this.
 
 #### Workaround
 
-If you're using `margin: auto` to center items, you can achieve the same effect by setting `align-self: center` on each item with `margin: auto` (or `align-items: center` on the container). Demo [15.1.b](https://codepen.io/philipwalton/pen/BmbMPP) shows this working in IE 10-11.
+If you're using `margin: auto` to center items, you can achieve the same effect by setting `align-self: center` on each item with `margin: auto` (or `align-items: center` on the container). Demo [15.1.b](https://akaustav.github.io/flexbugs/15.1.b-workaround.html) shows this working in IE 10-11.
 
 
 ### Flexbug #16
