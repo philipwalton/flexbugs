@@ -603,8 +603,8 @@ _`flex-basis` cannot be animated_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/yPrRax">16.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/MORPjP">16.1.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/16.1.a-bug.html">16.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/16.1.b-workaround.html">16.1.b</a> &ndash; <em>workaround</em>
     </td>
     <td>
         Internet Explorer 10-11<br>
@@ -616,11 +616,11 @@ _`flex-basis` cannot be animated_
   </tr>
 </table>
 
-In some browsers, CSS animations involving the `flex-basis` property are ignored. Demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) shows an example of this.
+In some browsers, CSS animations involving the `flex-basis` property are ignored. Demo [16.1.a](https://akaustav.github.io/flexbugs/16.1.a-bug.html) shows an example of this.
 
 #### Workaround
 
-Since the `flex-basis` property is effectively just a substitute for the container's size property along the main axis (`width` for rows and `height` for columns), you can achieve the effect of animating `flex-basis` by using a `flex-basis` value of `auto` and instead animating either the `width` or `height` instead. Demo [16.1.b](https://codepen.io/philipwalton/pen/MORPjP) shows how you can achieve the same effect from demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) by animating `width` instead of `flex-basis`.
+Since the `flex-basis` property is effectively just a substitute for the container's size property along the main axis (`width` for rows and `height` for columns), you can achieve the effect of animating `flex-basis` by using a `flex-basis` value of `auto` and instead animating either the `width` or `height` instead. Demo [16.1.b](https://akaustav.github.io/flexbugs/16.1.b-workaround.html) shows how you can achieve the same effect from demo [16.1.a](https://akaustav.github.io/flexbugs/16.1.a-bug.html) by animating `width` instead of `flex-basis`.
 
 
 ### Flexbug #17

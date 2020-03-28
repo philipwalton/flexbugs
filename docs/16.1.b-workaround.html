@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 16.1.b (workaround)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 16.1.b (workaround)
+       */
+
+      .FlexContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .FlexItem {
+        width: 20%;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+        -webkit-animation-name: swing;
+        animation-name: swing;
+        -webkit-animation-duration: 750ms;
+        animation-duration: 750ms;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+      }
+
+      @-webkit-keyframes swing {
+        0% {
+          width: 20%;
+        }
+        100% {
+          width: 80%;
+        }
+      }
+
+      @keyframes swing {
+        0% {
+          width: 20%;
+        }
+        100% {
+          width: 80%;
+        }
+      }
+
+      /* Presentational styles */
+      /* not demo related      */
+
+      .FlexContainer,
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+      }
+      .FlexContainer {
+        margin: 1em;
+        padding: 0.5em;
+      }
+      .FlexItem {
+        margin: 0.5em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <div class="FlexItem">
+        Weeeeee!
+      </div>
+    </div>
+  </body>
+</html>
