@@ -218,10 +218,10 @@ _The default `flex` value has changed_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/myOYqW">6.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/azBrLo">6.1.b</a> &ndash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/zvvQdB">6.2.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/LppoOj">6.2.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/6.1.a-bug.html">6.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/6.1.b-workaround.html">6.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://akaustav.github.io/flexbugs/6.2.a-bug.html">6.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/6.2.b-workaround.html">6.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10 (fixed in 11)</td>
   </tr>
@@ -261,7 +261,7 @@ This bug can manifest itself in two ways: when not setting any flex values or wh
 
 #### Workaround
 
-If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` value on all of your flex items, or to always use the longhand form (rather than the shorthand) in `flex` declarations to avoid the gotchas shown in the table above. Demo [6.1.a](https://codepen.io/philipwalton/pen/myOYqW) shows how not setting any flexibility properties causes an error, and demo [6.2.a](https://codepen.io/philipwalton/pen/zvvQdB) shows how using `flex: 1` can have the same problem.
+If you have to support IE 10, the best solution is to *always* set an explicit `flex-shrink` value on all of your flex items, or to always use the longhand form (rather than the shorthand) in `flex` declarations to avoid the gotchas shown in the table above. Demo [6.1.a](https://akaustav.github.io/flexbugs/6.1.a-bug.html) shows how not setting any flexibility properties causes an error, and demo [6.2.a](https://akaustav.github.io/flexbugs/6.2.a-bug.html) shows how using `flex: 1` can have the same problem.
 
 
 <!-- To preserve old links -->
