@@ -278,9 +278,9 @@ _`flex-basis` doesn't account for `box-sizing: border-box`_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/JoWjyb">7.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/XJMWem">7.1.b</a> &ndash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/ZYLdqb">7.1.c</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/7.1.a-bug.html">7.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/7.1.b-workaround.html">7.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://akaustav.github.io/flexbugs/7.1.c-workaround.html">7.1.c</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
   </tr>
@@ -288,14 +288,14 @@ _`flex-basis` doesn't account for `box-sizing: border-box`_
 
 An explicit `flex-basis` value (i.e., any value other than `auto`) is supposed to act just like `width` or `height`. It determines the initial size of a flex item and then the other flexibility properties allow it to grow or shrink accordingly.
 
-IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing: border-box`. Demo [7.1.a](https://codepen.io/philipwalton/pen/JoWjyb) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
+IE 10-11 always assume a content box model when using `flex-basis` to determine a flex item's size, even if that item is set to `box-sizing: border-box`. Demo [7.1.a](https://akaustav.github.io/flexbugs/7.1.a-bug.html) shows that an item with a `flex-basis` value of `100%` will overflow its container by the amount of its border plus its padding.
 
 #### Workaround
 
 There are two ways to work around this bug. The first requires no additional markup, but the second is slightly more flexible:
 
-1. Instead of setting an explicit `flex-basis` value, use `auto`, and then set an explicit width or height. Demo [7.1.b](https://codepen.io/philipwalton/pen/XJMWem) shows this.
-2. Use a wrapper element that contains no border or padding so it works with the content box model. Demo [7.1.c](https://codepen.io/philipwalton/pen/ZYLdqb) show this.
+1. Instead of setting an explicit `flex-basis` value, use `auto`, and then set an explicit width or height. Demo [7.1.b](https://akaustav.github.io/flexbugs/7.1.b-workaround.html) shows this.
+2. Use a wrapper element that contains no border or padding so it works with the content box model. Demo [7.1.c](https://akaustav.github.io/flexbugs/7.1.c-workaround.html) show this.
 
 
 <!-- To preserve old links -->
