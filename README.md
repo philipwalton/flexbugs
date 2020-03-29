@@ -352,11 +352,11 @@ _Some HTML elements can't be flex containers_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/ByZgpW">9.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/mywZpr">9.1.b</a> &ndash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/wKBqdY">9.2.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/EVaRaX">9.2.b</a> &ndash; <em>workaround</em><br>
-      <a href="https://codepen.io/paulirish/pen/OBJXWq">9.3.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/9.1.a-bug.html">9.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/9.1.b-workaround.html">9.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://akaustav.github.io/flexbugs/9.2.a-bug.html">9.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/9.2.b-workaround.html">9.2.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://akaustav.github.io/flexbugs/9.3.a-bug.html">9.3.a</a> &ndash; <em>bug</em><br>
     </td>
     <td>
       Chrome<br>
@@ -381,11 +381,11 @@ _Some HTML elements can't be flex containers_
 
 Certain HTML elements, like `<summary>`, `<fieldset>` and `<button>`, do not work as flex containers. The browser's default rendering of those element's UI conflicts with the `display: flex` declaration.
 
-Demo [9.1.a](https://codepen.io/philipwalton/pen/ByZgpW) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](https://codepen.io/philipwalton/pen/wKBqdY) shows that `<fieldset>` elements don't work in most browsers. Demo [9.3.a](https://codepen.io/paulirish/pen/OBJXWq) shows that `<summary>` elements dont work in Safari.
+Demo [9.1.a](https://akaustav.github.io/flexbugs/9.1.a-bug.html) shows how `<button>` elements didn't work in Firefox, and demo [9.2.a](https://akaustav.github.io/flexbugs/9.2.a-bug.html) shows that `<fieldset>` elements don't work in most browsers. Demo [9.3.a](https://akaustav.github.io/flexbugs/9.3.a-bug.html) shows that `<summary>` elements dont work in Safari.
 
 #### Workaround
 
-The simple solution to this problem is to use a wrapper element that can be a flex container (like a `<div>`) directly inside of the element that can't. Demos [9.1.b](https://codepen.io/philipwalton/pen/mywZpr) and [9.2.b](https://codepen.io/philipwalton/pen/EVaRaX) show workaround for the `<button>` and `<fieldset>` elements, respectively.
+The simple solution to this problem is to use a wrapper element that can be a flex container (like a `<div>`) directly inside of the element that can't. Demos [9.1.b](https://akaustav.github.io/flexbugs/9.1.b-workaround.html) and [9.2.b](https://akaustav.github.io/flexbugs/9.2.b-workaround.html) show workaround for the `<button>` and `<fieldset>` elements, respectively.
 
 
 <!-- To preserve old links -->

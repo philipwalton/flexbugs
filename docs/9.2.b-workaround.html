@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 9.2.b (workaround)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 9.2.b (workaround)
+       */
+
+      .FlexContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 1em;
+      }
+
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        padding: 1em;
+        margin: 1em;
+      }
+
+      fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      input {
+        background: #fff;
+        border: 1px solid #aaa;
+        margin: 1em;
+        padding: 1em;
+        width: 8em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <fieldset>
+      <div class="FlexContainer">
+        <div class="FlexItem">
+          <input placeholder="these fields" />
+        </div>
+        <div class="FlexItem">
+          <input placeholder="shouldn't be" />
+        </div>
+        <div class="FlexItem">
+          <input placeholder="stack vertically" />
+        </div>
+      </div>
+    </fieldset>
+  </body>
+</html>

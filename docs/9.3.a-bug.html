@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 9.3.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 9.3.a (bug)
+       */
+
+      .FlexContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 1em;
+      }
+
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        padding: 1em;
+        margin: 1em;
+      }
+
+      summary {
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      span {
+        background: #fff;
+        border: 1px solid #aaa;
+        margin: 1em;
+        padding: 1em;
+        width: 8em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <summary class="FlexContainer">
+      <div class="FlexItem">
+        <span>these elements</span>
+      </div>
+      <div class="FlexItem">
+        <span>shouldn't be</span>
+      </div>
+      <div class="FlexItem">
+        <span>stacked vertically</span>
+      </div>
+    </summary>
+  </body>
+</html>
