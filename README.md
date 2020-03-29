@@ -529,9 +529,9 @@ _Shrink-to-fit containers with `flex-flow: column wrap` do not contain their ite
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/vWbdZW">14.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/RjvQgx">14.1.b</a> &ndash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/MOxQBg">14.1.c</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/14.1.a-bug.html">14.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/14.1.b-workaround.html">14.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://akaustav.github.io/flexbugs/14.1.c-workaround.html">14.1.c</a> &ndash; <em>workaround</em>
     </td>
     <td>
         Chrome<br>
@@ -549,13 +549,13 @@ _Shrink-to-fit containers with `flex-flow: column wrap` do not contain their ite
 
 If you float a flex container, use `inline-flex`, or absolutely position it, the size of the container becomes determined by its content (a.k.a shrink-to-fit).
 
-When using `flex-flow: column wrap`, some browsers do not properly size the container based on its content, and there is unwanted overflow. Demo [14.1.a](https://codepen.io/philipwalton/pen/vWbdZW) shows an example of this.
+When using `flex-flow: column wrap`, some browsers do not properly size the container based on its content, and there is unwanted overflow. Demo [14.1.a](https://akaustav.github.io/flexbugs/14.1.a-bug.html) shows an example of this.
 
 #### Workaround
 
-If your container has a fixed height (usually the case when you enable wrapping), you avoid this bug by using `flex-flow: row wrap` (note `row` instead of `column`) and fake the column behavior by updating the container's [writing mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) (and reseting it on the items). Demo [14.1.b](https://codepen.io/philipwalton/pen/RjvQgx) shows an example of this working in all modern browsers.
+If your container has a fixed height (usually the case when you enable wrapping), you avoid this bug by using `flex-flow: row wrap` (note `row` instead of `column`) and fake the column behavior by updating the container's [writing mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode) (and reseting it on the items). Demo [14.1.b](https://akaustav.github.io/flexbugs/14.1.b-workaround.html) shows an example of this working in all modern browsers.
 
-**Note:** To use this workaround in Safari 10 you may need to set explicit dimensions on the flex items. Demo [14.1.c](https://codepen.io/philipwalton/pen/MOxQBg) shows an example of how this can be needed in Safari 10.
+**Note:** To use this workaround in Safari 10 you may need to set explicit dimensions on the flex items. Demo [14.1.c](https://akaustav.github.io/flexbugs/14.1.c-workaround.html) shows an example of how this can be needed in Safari 10.
 
 
 ### Flexbug #15
