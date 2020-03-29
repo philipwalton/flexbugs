@@ -115,10 +115,10 @@ _`min-height` on a flex container won't apply to its flex items_
   </tr>
   <tr valign="top">
     <td>
-      <a href="https://codepen.io/philipwalton/pen/RNoZJP">3.1.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/KwNvLo">3.1.b</a> &ndash; <em>workaround</em><br>
-      <a href="https://codepen.io/philipwalton/pen/VYmbmj">3.2.a</a> &ndash; <em>bug</em><br>
-      <a href="https://codepen.io/philipwalton/pen/JdvdJE">3.2.b</a> &ndash; <em>workaround</em>
+      <a href="https://akaustav.github.io/flexbugs/3.1.a-bug.html">3.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/3.1.b-workaround.html">3.1.b</a> &ndash; <em>workaround</em><br>
+      <a href="https://akaustav.github.io/flexbugs/3.2.a-bug.html">3.2.a</a> &ndash; <em>bug</em><br>
+      <a href="https://akaustav.github.io/flexbugs/3.2.b-workaround.html">3.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
     <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625</a></td>
@@ -131,9 +131,9 @@ In IE 10-11, `min-height` declarations on flex containers work to size the conta
 
 #### Workaround
 
-By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have any content below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work as shown in demo [3.1.b](https://codepen.io/philipwalton/pen/KwNvLo).
+By far the most common element to apply `min-height` to is the body element, and usually you're setting it to `100%` (or `100vh`). Since the body element will never have any content below it, and since having a vertical scroll bar appear when there's a lot of content on the page is usually the desired behavior, substituting `height` for `min-height` will almost always work as shown in demo [3.1.b](https://akaustav.github.io/flexbugs/3.1.b-workaround.html).
 
-For cases where `min-height` is required, the workaround is to add a wrapper element around the flex container that is itself a flex container in the column direction. For some reason nested flex containers are not affected by this bug. Demo [3.2.a](https://codepen.io/philipwalton/pen/VYmbmj) shows a visual design where `min-height` is required, and demo [3.2.b](https://codepen.io/philipwalton/pen/JdvdJE) shows how this bug can be avoided with a wrapper element.
+For cases where `min-height` is required, the workaround is to add a wrapper element around the flex container that is itself a flex container in the column direction. For some reason nested flex containers are not affected by this bug. Demo [3.2.a](https://akaustav.github.io/flexbugs/3.2.a-bug.html) shows a visual design where `min-height` is required, and demo [3.2.b](https://akaustav.github.io/flexbugs/3.2.b-workaround.html) shows how this bug can be avoided with a wrapper element.
 
 
 <!-- To preserve old links -->

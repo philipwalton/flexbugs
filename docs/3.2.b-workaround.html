@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 3.2.b (workaround)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 3.2.b (workaround)
+       *
+       * 1. Flexbug #2 workaround.
+       */
+
+      .FlexContainerWrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+
+      .FlexContainer {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 1em;
+        padding: 2em;
+        min-height: 250px;
+        width: 400px;
+      }
+
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; /* 1 */
+        max-width: 100%; /* 1 */
+        padding: 0 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainerWrapper">
+      <div class="FlexContainer">
+        <div class="FlexItem">
+          <p>
+            When content is sparse,<br />
+            I should be centered.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="FlexContainerWrapper">
+      <div class="FlexContainer">
+        <div class="FlexItem">
+          <p>
+            When there's lots of content&mdash;more content than can fit inside the flex container&mdash;the container should expand vertically to accomodate.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non pulvinar mi, quis aliquam ligula. Aenean cursus sapien augue, vel porta arcu
+            aliquet ut. Cras eu massa eu libero porttitor commodo. Morbi non ante luctus, finibus felis sit amet, dignissim augue. Sed consectetur iaculis nisi
+            sed vestibulum. Integer accumsan auctor justo sed eleifend. Suspendisse id diam lectus. Nullam et volutpat dui. Pellentesque a mauris ac ante viverra
+            elementum. Curabitur tincidunt ac ex ut lobortis. In eget ligula ut sapien convallis feugiat. Duis vehicula eget elit at consectetur. Aliquam pharetra
+            maximus consequat. Fusce mattis vel velit non cursus. Integer sed metus libero. Fusce leo est, suscipit id velit eu, egestas viverra nibh. Duis sed
+            orci augue. Vivamus varius consectetur gravida. Sed id faucibus felis. Morbi a diam nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
