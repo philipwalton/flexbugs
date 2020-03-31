@@ -670,7 +670,7 @@ Demo [17.1.b](https://philipwalton.github.io/flexbugs/17.1.b-workaround.html) sh
 
 ## Acknowledgments
 
-Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Bugs](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/). It's maintained by [@philwalton](https://twitter.com/philwalton) and [@gregwhitworth](https://twitter.com/gregwhitworth). If you have any questions or would like to get involved, please feel free to reach out to either of us on Twitter.
+Flexbugs was created as a follow-up to the article [Normalizing Cross-Browser Flexbox Bugs](http://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/). It is maintained by [@philwalton](https://twitter.com/philwalton), [@gregwhitworth](https://twitter.com/gregwhitworth) and [@akaustav](https://twitter.com/akaustav). If you have any questions or would like to get involved, please feel free to reach out to one of us on Twitter.
 
 ## Contributing
 
