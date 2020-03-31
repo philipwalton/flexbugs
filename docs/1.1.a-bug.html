@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 1.1.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 1.1.a (bug)
+       */
+
+      .FlexContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 1em;
+        width: 200px;
+      }
+
+      /* Presentational styles */
+      /* not demo related      */
+
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        margin: 1em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <div class="FlexItem">
+        ReallyLongWord
+      </div>
+      <div class="FlexItem">
+        AnotherReallyLongWord
+      </div>
+      <div class="FlexItem">
+        YetAnotherReallyLongWord
+      </div>
+    </div>
+  </body>
+</html>

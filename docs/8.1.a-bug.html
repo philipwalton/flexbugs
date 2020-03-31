@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 8.1.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 8.1.a (bug)
+       */
+
+      .FlexContainer {
+        background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 1em;
+        padding: 1em;
+      }
+
+      .FlexItem {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(100% / 3);
+        flex: 0 0 calc(100% / 3);
+      }
+
+      .FlexItem p {
+        background: hsla(0, 0%, 0%, 0.1);
+        text-align: center;
+        margin: 1em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <div class="FlexItem">
+        <p>1/3</p>
+      </div>
+      <div class="FlexItem">
+        <p>1/3</p>
+      </div>
+      <div class="FlexItem">
+        <p>1/3</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 10.1.b (workaround)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 10.1.b (workaround)
+       */
+
+      .OuterFlexContainer {
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+        background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        line-height: 1.4;
+        margin: 1em;
+        padding: 1em;
+      }
+
+      .FlexItem {
+        margin-right: 1em;
+      }
+
+      .InnerFlexContainer {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="OuterFlexContainer">
+      <div class="FlexItem">I should be aligned with the first line of text.</div>
+      <div class="FlexItem">
+        <div class="InnerFlexContainer">
+          First line of text.
+        </div>
+        Second line of text.<br />
+        Third line of text.<br />
+        Fourth line of text.
+      </div>
+    </div>
+  </body>
+</html>

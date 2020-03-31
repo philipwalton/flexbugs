@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 1.2.a (bug)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 1.2.a (bug)
+       */
+
+      .FlexContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+
+      /* Presentational styles */
+      /* not demo related      */
+
+      .FlexContainer,
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+      }
+
+      .FlexContainer {
+        margin: 1em;
+        padding: 0.5em;
+      }
+
+      .FlexItem {
+        margin: 0.5em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <div class="FlexItem">
+        Flex item<br>
+        with multiple</br>
+        lines of text
+      </div>
+      <div class="FlexItem">
+        Another flex item<br>
+        with multiple</br>
+        lines of text
+      </div>
+    </div>
+  </body>
+</html>

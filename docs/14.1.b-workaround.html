@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 14.1.b (workaround)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 14.1.b (workaround)
+       */
+
+      .FlexContainer {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap;
+        height: 13em;
+        -webkit-writing-mode: vertical-lr;
+        -ms-writing-mode: tb-lr;
+        writing-mode: vertical-lr;
+      }
+
+      .FlexItem {
+        -webkit-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+        writing-mode: horizontal-tb;
+      }
+
+      /* Presentational styles */
+      /* not demo related      */
+
+      .FlexContainer {
+        outline: 1px solid red;
+        list-style: none;
+        margin: 1em;
+        padding: 0.5em;
+      }
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        margin: 0.5em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <ul class="FlexContainer">
+      <li class="FlexItem">One</li>
+      <li class="FlexItem">Two</li>
+      <li class="FlexItem">Three</li>
+      <li class="FlexItem">Four</li>
+      <li class="FlexItem">Five</li>
+      <li class="FlexItem">Six</li>
+      <li class="FlexItem">Seven</li>
+      <li class="FlexItem">Eight</li>
+      <li class="FlexItem">Nine</li>
+      <li class="FlexItem">Ten</li>
+    </ul>
+  </body>
+</html>
