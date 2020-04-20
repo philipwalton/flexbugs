@@ -121,7 +121,7 @@ _`min-height` on a flex container won't apply to its flex items_
       <a href="https://philipwalton.github.io/flexbugs/3.2.b-workaround.html">3.2.b</a> &ndash; <em>workaround</em>
     </td>
     <td>Internet Explorer 10-11 (fixed in Edge)</td>
-    <td><a href="https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625</a></td>
+    <td><a href="http://web.archive.org/web/20170312223506/https://connect.microsoft.com/IE/feedback/details/802625/min-height-and-flexbox-flex-direction-column-dont-work-together-in-ie-10-11-preview">IE #802625 (archived)</a></td>
   </tr>
 </table>
 
