@@ -49,7 +49,7 @@ _Minimum content sizing of flex items not honored_
     <td>
       Chrome (fixed in 72)<br>
       Opera (fixed in 60)<br>
-      Safari (fixed in 10)
+      Safari
     </td>
     <td>
       <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898 (fixed)</a><br>
