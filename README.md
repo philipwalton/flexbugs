@@ -359,8 +359,8 @@ _Some HTML elements can't be flex containers_
       <a href="https://philipwalton.github.io/flexbugs/9.3.a-bug.html">9.3.a</a> &ndash; <em>bug</em><br>
     </td>
     <td>
-      Chrome<br>
-      Edge<br>
+      Chrome (fixed in 86)<br>
+      Edge Legacy<br>
       Firefox (fixed in 63)<br>
       Opera<br>
       Safari (fixed in 11)
