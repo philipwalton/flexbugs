@@ -577,7 +577,7 @@ _Column flex items ignore `margin: auto` on the cross axis_
         Internet Explorer 10-11 (fixed in Edge)
     </td>
     <td>
-        <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/14593426/">IE #14593426</a>
+        <a href="https://web.archive.org/web/20171203131734/https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/14593426/">IE #14593426 (archived)</a>
     </td>
   </tr>
 </table>
