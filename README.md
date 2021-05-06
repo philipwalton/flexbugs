@@ -366,9 +366,8 @@ _Some HTML elements can't be flex containers_
       Safari (fixed in 11)
     </td>
     <td>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=375693">Chrome #375693</a><br>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=700029">Chrome #700029</a><br>
-      <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145</a><br>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=375693">Chrome #375693 (fixed)</a><br>
+      <a href="https://code.google.com/p/chromium/issues/detail?id=700029">Chrome #700029 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1397768">Firefox #1397768 (fixed)</a><br>
