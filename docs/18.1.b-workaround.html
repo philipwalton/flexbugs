@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbug 18.1.b (workaround)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <style>
+      /**
+       * Flexbug demo 18.1.b (workaround)
+       *
+       * 1. Set `max-width:100%` to prevent
+       *    overflow.
+       * 2. Set `min-width:0%` to let IE 
+       *    get shrink size.
+       */
+
+       .FlexContainer {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background: hsla(0, 0%, 0%, 0.1);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: row;
+        height: 200px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 1em;
+        padding: 2em;
+        width: 300px;
+      }
+
+      .FlexItem {
+        background: hsla(0, 0%, 0%, 0.1);
+        padding: 1em;
+        max-width: 100%; /* 1 */
+        min-width: 0%; /* 2 */
+      }
+    </style>
+  </head>
+  <body translate="no">
+    <div class="FlexContainer">
+      <textarea rows="2" cols="80" class="FlexItem">
+        The textarea is overflowing its container.
+      </textarea>
+    </div>
+  </body>
+</html>
+
