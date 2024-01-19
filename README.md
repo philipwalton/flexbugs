@@ -52,7 +52,7 @@ _Minimum content sizing of flex items not honored_
       Safari (fixed in 10)
     </td>
     <td>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=426898">Chrome #426898 (fixed)</a><br>
+      <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=426898">Chrome #426898 (fixed)</a><br>
       <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=596743">Chrome #596743 (fixed)</a></br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=146020">Safari #146020 (fixed)</a>
     </td>
@@ -366,15 +366,15 @@ _Some HTML elements can't be flex containers_
       Safari (fixed in 11)
     </td>
     <td>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=375693">Chrome #375693</a><br>
-      <a href="https://code.google.com/p/chromium/issues/detail?id=700029">Chrome #700029</a><br>
-      <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145</a><br>
+      <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=375693">Chrome #375693 (fixed)</a><br>
+      <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=700029">Chrome #700029 (fixed)</a><br>
+      <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4511145/">Edge #4511145 (obsolete)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=984869">Firefox #984869 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1230207">Firefox #1230207 (fixed)</a><br>
       <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1397768">Firefox #1397768 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=169082">Safari #169082 (fixed)</a><br>
       <a href="https://bugs.webkit.org/show_bug.cgi?id=169700">Safari #169700 (fixed)</a><br>
-      <a href="https://bugs.webkit.org/show_bug.cgi?id=190065">Safari #190065</a>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=190065">Safari #190065 (fixed)</a>
     </td>
   </tr>
 </table>
@@ -442,7 +442,7 @@ _Min and max size declarations are ignored when wrapping flex items_
     </td>
     <td>Safari (fixed in 10.1)</td>
     <td>
-      <a href="https://bugs.webkit.org/show_bug.cgi?id=136041">Safari #136041</a>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=136041">Safari #136041 (fixed)</a>
     </td>
   </tr>
 </table>
@@ -534,13 +534,13 @@ _Shrink-to-fit containers with `flex-flow: column wrap` do not contain their ite
       <a href="https://philipwalton.github.io/flexbugs/14.1.c-workaround.html">14.1.c</a> &ndash; <em>workaround</em>
     </td>
     <td>
-        Chrome<br>
+        Chrome (fixed in 118)<br>
         Firefox<br>
         Safari<br>
         Opera<br>
     </td>
     <td>
-        <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=507397">Chrome #507397</a><br>
+        <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=507397">Chrome #507397 (fixed)</a><br>
         <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=995020">Firefox #995020</a><br>
         <a href="https://bugs.webkit.org/show_bug.cgi?id=157648">Safari #157648</a>
     </td>
@@ -611,7 +611,7 @@ _`flex-basis` cannot be animated_
         Safari
     </td>
     <td>
-        <a href="https://bugs.webkit.org/show_bug.cgi?id=180435">Safari #180435</a>
+        <a href="https://bugs.webkit.org/show_bug.cgi?id=180435">Safari #180435 (fixed)</a>
     </td>
   </tr>
 </table>
