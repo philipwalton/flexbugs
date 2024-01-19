@@ -1,3 +1,5 @@
+:warning: _**UPDATE:** this repo is no longer maintained, as most of the bugs listed here are fixed in modern browsers._
+
 Flexbugs
 ========
 
