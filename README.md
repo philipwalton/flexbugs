@@ -26,6 +26,7 @@ As the spec continues to evolve and vendors nail down their implementations, thi
 15. [Column flex items ignore `margin: auto` on the cross axis](#flexbug-15)
 16. [`flex-basis` cannot be animated](#flexbug-16)
 17. [Flex items are not correctly justified when `max-width` is used](#flexbug-17)
+18. [Using <textarea> element as flex items overflow their container ](#flexbug-18)
 
 
 <!-- To preserve old links -->
@@ -583,7 +584,6 @@ _Column flex items ignore `margin: auto` on the cross axis_
     </td>
   </tr>
 </table>
-
 `margin: auto` can be used to fill all the available space between flex items (and is useful for centering), but in IE 10-11 this doesn't work in the cross axis for flex items within a column container.
 
 Instead of filling the available space, items render according to their `align-self` property, which defaults to `stretch`. Demo [15.1.a](https://philipwalton.github.io/flexbugs/15.1.a-bug.html) shows an example of this.
@@ -668,6 +668,36 @@ In other words, the following two declarations will both render an item with a f
 ```
 
 Demo [17.1.b](https://philipwalton.github.io/flexbugs/17.1.b-workaround.html) shows this working in IE 11.
+
+<!-- To preserve old links -->
+<a name="2-column-flex-items-set-to-align-itemscenter-overflow-their-container"><a>
+
+### Flexbug #18
+
+_Using <textarea> element as flex items overflow their container_
+
+<table>
+  <tr>
+    <th align="left">Demos</th>
+    <th align="left">Browsers affected</th>
+  </tr>
+  <tr valign="top">
+    <td>
+      <a href="https://philipwalton.github.io/flexbugs/18.1.a-bug.html">18.1.a</a> &ndash; <em>bug</em><br>
+      <a href="https://philipwalton.github.io/flexbugs/18.1.b-workaround.html">18.1.b</a> &ndash; <em>workaround</em>
+    </td>
+    <td>
+      Internet Explorer 11
+    </td>
+  </tr>
+</table>
+
+When using <textarea> element as the flex item, the columns of the <textarea> element, if too big, will overflow their container in IE 11.
+
+#### Workaround
+
+Similar to [#flexbug-2](#flexbug-2), this can be fixed by setting  `max-width: 100%` and  `min-width: 0%` on the <textarea> element. If you set <textarea> element property `overflow: auto` to `overflow: visible` in Firefox, <textarea> element overflow as well.
+
 
 
 ## Acknowledgments
