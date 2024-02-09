@@ -610,7 +610,7 @@ _`flex-basis` cannot be animated_
     </td>
     <td>
         Internet Explorer 10-11<br>
-        Safari
+        Safari (fixed in 14.1)
     </td>
     <td>
         <a href="https://bugs.webkit.org/show_bug.cgi?id=180435">Safari #180435 (fixed)</a>
